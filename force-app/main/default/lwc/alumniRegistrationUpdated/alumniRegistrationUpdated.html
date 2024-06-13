@@ -1,0 +1,212 @@
+<template>
+    <template if:true={desktopCheck}>
+    <div class="slds-box" style="background-color: #fcd4b4;width:70%;margin-left:15%">
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col">
+                <span class="large-font">Alumni Registration Form</span>
+            </div>
+            <div class="slds-col">
+                <img src={image} class="slds-icon slds-float_right">
+            </div>
+        </div>
+        
+        <div class="slds-form-element">
+            <span class="slds-form-element__label" id="file-selector-primary-label-101"><b>Choose Profile Image</b></span>
+            <div class="slds-form-element__control">
+            <div class="slds-file-selector slds-file-selector_files">
+            <div class="slds-file-selector__dropzone">
+            <input type="file" class="slds-file-selector__input slds-assistive-text" accept="image/png" id="file-upload-input-103" aria-labelledby="file-selector-primary-label-101 file-selector-secondary-label102" />
+            <label class="slds-file-selector__body" for="file-upload-input-103" id="file-selector-secondary-label102">
+            <span class="slds-file-selector__button slds-button slds-button_neutral file-upload">
+            Choose File</span>
+            
+            </label>
+            </div>
+            </div>
+            </div>
+            </div>
+      
+
+      <div class="slds-grid slds-gutters">
+        <div class="slds-col">
+            <lightning-input label="First Name" class="InputValues"></lightning-input>
+        </div>
+        <div class="slds-col">
+            <lightning-input label="Last Name" class="InputValues"></lightning-input>
+        </div>
+    </div>
+    <div class="slds-grid slds-gutters">
+        <div class="slds-col">
+            <lightning-input label="Password" class="InputValues"></lightning-input>
+        </div>
+        <div class="slds-col">
+            <lightning-input label="Confirm Password" class="InputValues"></lightning-input>
+        </div>
+    </div>
+    <div class="slds-grid slds-gutters">
+        <div class="slds-col slds-size_1-of-3">
+            <lightning-input label="Country Code" class="InputValues"></lightning-input>
+        </div>
+        <div class="slds-col slds-size_1-of-2" style="width: 67%;">
+            <lightning-input label="Phone Number" class="InputValues"></lightning-input>
+        </div>
+      </div>
+      <div>
+        <lightning-input label="Email" class="InputValues"></lightning-input>
+      </div>
+      <div class="slds-grid slds-gutters">
+        <div class="slds-col">
+            <lightning-input label="Degree" class="InputValues"></lightning-input>
+        </div>
+        <div class="slds-col">
+            <lightning-input label="Year of Pass Out" class="InputValues"></lightning-input>
+        </div>
+      </div>
+      <div class="slds-grid slds-gutters">
+        <div class="slds-col">
+            <lightning-input label="Profession" class="InputValues"></lightning-input>
+        </div>
+        <div class="slds-col">
+            <lightning-input label="Company Name" class="InputValues"></lightning-input>
+        </div>
+      </div>
+      <div>
+        <lightning-input label="Address" class="InputValues"></lightning-input>
+      </div><br/>
+      <div class="slds-align_absolute-center">
+        <p><b>Kindly provide details of other alumni know to you that will love to join the alumni group</b></p>
+      </div>
+      <div class="slds-grid slds-gutters">
+        <div class="slds-col">
+            <lightning-input label="Name" class="InputValues"></lightning-input>
+        </div>
+        <div class="slds-col">
+            <lightning-input label="Email" class="InputValues"></lightning-input>
+        </div>
+      </div>
+      <div class="slds-grid slds-gutters">
+        <div class="slds-col">
+            <lightning-input label="Name" class="InputValues"></lightning-input>
+        </div>
+        <div class="slds-col">
+            <lightning-input label="Email" class="InputValues"></lightning-input>
+        </div>
+      </div>
+      <div>
+        <lightning-textarea ></lightning-textarea>
+      </div><br/>
+      <div class="slds-clearfix">
+        <div class="slds-float_right">
+            <lightning-button class="my-brand" variant="brand" label="Submit"></lightning-button>
+        </div>
+      </div>
+</div>
+</template>
+
+
+<!-- For Mobile Devices-->
+
+<template if:true={MobileCheck}>
+    <div class="slds-box" style="background-color: #fcd4b4;width:70%;margin-left:15%">
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col">
+                <span class="large-font">Alumni Registration Form</span>
+            </div>
+            <div class="slds-col">
+                <img src={image} class="slds-icon slds-float_right">
+            </div>
+        </div>
+        
+        <div class="slds-form-element">
+            <span class="slds-form-element__label" id="file-selector-primary-label-102"><b>Choose Profile Image</b></span>
+            <div class="slds-form-element__control">
+            <div class="slds-file-selector slds-file-selector_files">
+            <div class="slds-file-selector__dropzone">
+            <input type="file" class="slds-file-selector__input slds-assistive-text" accept="image/png" id="file-upload-input-104" aria-labelledby="file-selector-primary-label-101 file-selector-secondary-label102" />
+            <label class="slds-file-selector__body" for="file-upload-input-103" id="file-selector-secondary-label104">
+            <span class="slds-file-selector__button slds-button slds-button_neutral file-upload">
+            Choose File</span>
+            
+            </label>
+            </div>
+            </div>
+            </div>
+            </div>
+      
+
+      <div class="slds-grid slds-gutters">
+        <div class="slds-col">
+            <lightning-input label="First Name" class="InputValues"></lightning-input>
+        </div>
+        <div class="slds-col">
+            <lightning-input label="Last Name" class="InputValues"></lightning-input>
+        </div>
+    </div>
+    <div class="slds-grid slds-gutters">
+        <div class="slds-col">
+            <lightning-input label="Password" class="InputValues"></lightning-input>
+        </div>
+        <div class="slds-col">
+            <lightning-input label="Confirm Password" class="InputValues"></lightning-input>
+        </div>
+    </div>
+    <div class="slds-grid slds-gutters">
+        <div class="slds-col slds-size_1-of-3">
+            <lightning-input label="Country Code" class="InputValues"></lightning-input>
+        </div>
+        <div class="slds-col slds-size_1-of-2" style="width: 67%;">
+            <lightning-input label="Phone Number" class="InputValues"></lightning-input>
+        </div>
+      </div>
+      <div>
+        <lightning-input label="Email" class="InputValues"></lightning-input>
+      </div>
+      <div class="slds-grid slds-gutters">
+        <div class="slds-col">
+            <lightning-input label="Degree" class="InputValues"></lightning-input>
+        </div>
+        <div class="slds-col">
+            <lightning-input label="Year of Pass Out" class="InputValues"></lightning-input>
+        </div>
+      </div>
+      <div class="slds-grid slds-gutters">
+        <div class="slds-col">
+            <lightning-input label="Profession" class="InputValues"></lightning-input>
+        </div>
+        <div class="slds-col">
+            <lightning-input label="Company Name" class="InputValues"></lightning-input>
+        </div>
+      </div>
+      <div>
+        <lightning-input label="Address" class="InputValues"></lightning-input>
+      </div><br/>
+      <div class="slds-align_absolute-center">
+        <p><b>Kindly provide details of other alumni know to you that will love to join the alumni group</b></p>
+      </div>
+      <div class="slds-grid slds-gutters">
+        <div class="slds-col">
+            <lightning-input label="Name" class="InputValues"></lightning-input>
+        </div>
+        <div class="slds-col">
+            <lightning-input label="Email" class="InputValues"></lightning-input>
+        </div>
+      </div>
+      <div class="slds-grid slds-gutters">
+        <div class="slds-col">
+            <lightning-input label="Name" class="InputValues"></lightning-input>
+        </div>
+        <div class="slds-col">
+            <lightning-input label="Email" class="InputValues"></lightning-input>
+        </div>
+      </div>
+      <div>
+        <lightning-textarea ></lightning-textarea>
+      </div><br/>
+      <div class="slds-clearfix">
+        <div class="slds-float_right">
+            <lightning-button class="my-brand" variant="brand" label="Submit"></lightning-button>
+        </div>
+      </div>
+</div>
+</template>
+</template>

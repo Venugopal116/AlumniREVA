@@ -1,0 +1,135 @@
+<template>
+
+  <div class="container">
+    <div class="tabs">
+        <div class="tab" tabindex="0" data-step="1" onclick={handleStepClick}>ALL ALUMNI ACHIEVEMENTS</div>
+        <div class="tab" tabindex="0" data-step="2" onclick={handleStepClick}> ENTER YOUR ACHIEVEMENTS </div>
+    </div>
+    <template if:true={isAllAcheivementsSelected}>
+                <section>
+                  <div class="slds-scrollable_y" style="height:22rem;width:100%;" tabindex="0">
+                    <table class="slds-text-heading_small">
+                        <thead style="position: sticky; top: 0; background-color: white; z-index: 1;">
+                            <tr>
+                                <th> Activity Number </th>
+                                <th> Achiever </th>
+                                <th> Achievement </th>
+                                <th> Details </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                          <template if:true={recordsList}>
+                            <template for:each={recordsList} for:item="rec">
+                                <tr key={rec.Id}>
+                                    <td key={rec.Id} data-cell="Activity Number">
+                                        <p class="slds-text-link pointer-hover" data-id={rec.Id}
+                                            onclick={navigateToRecord}>
+                                            <strong data-id={rec.Id}>{rec.Name}</strong>
+                                        </p>
+                                    </td>
+                                    <td key={rec.Id} data-cell="Achiever">
+                                        <strong>{rec.Achiever}</strong>
+                                    </td>
+                                    <td key={rec.Id} data-cell="Achievement">
+                                        <strong>{rec.Achievement}</strong>
+                                    </td>
+                                    <td key={rec.Id} data-cell="Details">
+                                        <strong>{rec.Details}</strong>
+                                    </td>
+                                </tr>
+                            </template>
+                          </template>
+                        </tbody>
+                    </table>
+                  </div>
+                </section>
+            </template>
+            <template if:true={isEnterAcheivementsSelected}>
+              <!-- lwc component -->
+                <!-- <c-alu-enter-your-acheivements></c-alu-enter-your-acheivements> -->
+
+                <!-- flow component -->
+                <lightning-flow flow-api-name='Enter_Your_Achievements' ></lightning-flow>
+            </template>
+  </div>
+
+    <!-- <lightning-layout class="custom-container" multiple-rows>
+        <lightning-layout-item class="slds-p-vertical_medium" size="12" small-device-size="12" medium-device-size="12" large-device-size="12">
+            
+         
+
+                <div class="slds-tabs_custom">
+                  <ul class="slds-tabs_custom__nav" role="tablist">
+                      <li class={allAlumniAcheivementsBlogsClass} title="Item One" role="presentation">
+                          <a class="slds-tabs_custom__link" href="#" role="tab" tabindex="0"
+                              aria-selected={isAllAcheivementsSelected} onclick={handleTabClick}
+                              data-tab="allAlumniAcheivementsTab" aria-controls="tab-default-1" id="tab-default-1__item">
+                              ALL ALUMNI ACHIEVEMENTS
+                          </a>
+                      </li>
+                      <li class={allAlumniAcheivementsBlogsClass} title="Item Two" role="presentation">
+                          <a class="slds-tabs_custom__link" href="#" role="tab" tabindex="-1"
+                              aria-selected={isEnterAcheivementsSelected} onclick={handleTabClick}
+                              data-tab="enterYourAhmntsTab" aria-controls="tab-default-2" id="tab-default-2__item">
+                              ENTER YOUR ACHIEVEMENTS
+                          </a>
+                      </li>
+                  </ul>
+              </div>
+          
+        </lightning-layout-item>
+        
+        <lightning-layout-item  if:true={isAllAcheivementsSelected}  size="12" small-device-size="12" medium-device-size="12" large-device-size="12" padding="vertical-medium"  >
+          <div class="slds-scrollable_y" style="height:15rem;width:100%;" tabindex="0">  
+          <table  class="slds-table slds-table_cell-buffer slds-table_bordered slds-scrollable_y" aria-label="Example default base table of Opportunities">
+                <thead>
+                  <tr class="slds-line-height_reset">
+                    <th class="" scope="col">
+                      <div class="slds-truncate" title="Opportunity Name" >Activity Number</div>
+                    </th>
+                    <th class="" scope="col">
+                      <div class="slds-truncate" title="Account Name">Achiever</div>
+                    </th>
+                    <th class="" scope="col">
+                      <div class="slds-truncate" title="Close Date">Achievement</div>
+                    </th>
+                    <th class="" scope="col">
+                      <div class="slds-truncate" title="Stage">Details</div>
+                    </th>
+                   
+                  </tr>
+                </thead>
+                <tbody>
+                    <template if:true={recordsList}>
+                        <template  for:each={recordsList} for:item="rec">
+                  <tr key={rec.Id} class="slds-hint-parent" style="padding:10px;">
+                    
+                
+                    <td key={rec.Id} data-label="Account Name">
+                      <a data-id={rec.Id} onclick={navigateToRecord} class="slds-truncate" title="Activity Number" >{rec.Name}</a>
+                    </td>
+                    <td key={rec.Id} data-label="Close Date">
+                      <div class="slds-truncate" title="Contact Name">{rec.Achiever__c}</div>
+                    </td>
+                    <td key={rec.Id} data-label="Prospecting">
+                      <div class="slds-truncate" title="Blog Name">{rec.Achievement__c}</div>
+                    </td>
+                    <td key={rec.Id} data-label="Confidence">
+                      <div class="slds-truncate" title="Blog Link">{rec.Details__c}</div>
+                    </td>
+               
+                    
+                  </tr>
+                </template>
+            </template>
+           
+                </tbody>
+              </table>
+            </div>
+        </lightning-layout-item>
+         <lightning-layout-item class="slds-p-around_medium"  if:true={isEnterAcheivementsSelected}  size="12" small-device-size="12" medium-device-size="12" large-device-size="12" padding="vertical-medium" >
+            <c-alu-enter-your-acheivements></c-alu-enter-your-acheivements>
+         </lightning-layout-item>
+        
+    </lightning-layout> -->
+</template>

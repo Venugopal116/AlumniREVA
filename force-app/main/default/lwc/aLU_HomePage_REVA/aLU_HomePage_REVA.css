@@ -1,0 +1,757 @@
+/* --------- Desktop-------------- */ 
+.slds-col {
+box-sizing: border-box;
+}
+
+body {
+font-family: Arial, sans-serif;
+background-color: #2c3e50;
+margin: 0;
+padding: 0;
+display: flex;
+justify-content: center;
+align-items: center;
+/* height: 100vh; */
+text-align: right;
+}
+
+.topBannerBg{
+width: 100%;
+height: 100vh; /*777 */
+background-size:111%;
+background-repeat: no-repeat;
+object-fit: contain;
+/* background-color: orange; */
+}
+.textoverlay{    
+text-align: left;
+padding-left: 63px;
+font-size: 78px;
+color: white;
+padding-top: 22%;
+font-family: Arial, sans-serif;
+font-weight: 900;
+/* height: 200vh; */
+display: flex;
+line-height: 82%;
+
+}
+
+
+
+
+
+/* don't touch below */
+
+.midBlockParent{
+width: 100%;
+
+background-size: 100%;
+background-repeat: no-repeat;
+display: flex;
+justify-content: center;
+align-items: center; 
+position:relative;
+}
+
+.midBlockParent > .midBlockChild {
+width: 96%; 
+height: 125vh;
+/* background-color: yellow; */
+position:absolute;
+top: -20vh;
+}
+
+.midBlockParent > .midBlockChild> .midBlockGrid{
+width: 100%;
+height: 125vh;
+
+}
+.midBlockParent > .midBlockChild> .midBlockGrid>.card{
+height: 62.5vh;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+/* don't touch below */
+
+.midBannerBlock {
+width: 100%;
+height: 100%;
+display: flex;
+justify-content: left;
+align-items: flex-start;
+overflow-x: hidden;
+margin-left: 12px;
+margin-top: 30px;
+overflow-y: hidden;
+z-index: 1;
+}
+
+.midBannerBlock > .midBannerArticle {
+width: 100%;
+height: 100%;
+display: flex;
+justify-content: center;
+align-items: flex-start; 
+/* background-color: #0097a2; */
+/* Change from center to flex-start */
+}
+
+.midBannerBlock > .midBannerArticle > .firstRow {
+width: 100%;
+height: 100%;
+display: flex;
+flex-direction: column;
+/* gap: 2; */
+justify-content: space-between;
+align-items: center;
+margin-top: 20px;
+/* padding-left:20px; */
+z-index: 1;
+}
+
+
+.midBannerBlock>.midBannerArticle>.firstRow>.iconBlock{
+width: 90%;
+height:25%;
+display: flex;
+justify-content: space-between;
+align-items: self-start;    
+
+}
+.midBannerBlock>.midBannerArticle>.firstRow>.iconBlock>.leftSection{
+Width: 50%;
+height: 100%;
+padding-right: 0;
+/* padding-right: 20px; */
+
+}
+.midBannerBlock>.midBannerArticle>.firstRow>.iconBlock>.leftSection>.img{
+display: block;
+margin: 0 auto;
+width: 160px;
+height: auto;
+float: left;
+
+}
+.midBannerBlock>.midBannerArticle>.firstRow>.iconBlock>.rightSection{
+Width: 50%;
+height: 100%;
+/* padding-right: 20px; */
+
+
+}
+.midBannerBlock>.midBannerArticle>.firstRow>.iconBlock>.rightSection>.tileHeadings{
+margin: 0 auto;
+width: 160px;
+height: auto;
+float: right;
+padding-right: 24px;
+}
+.midBannerBlock>.midBannerArticle>.firstRow>.paraBlock{
+width: 100%;
+height:245px;
+display: flex;
+flex-direction:column;
+justify-content: left;
+align-items: flex-start;
+padding-top: 20px;
+/* gap:20px; */
+margin:0 auto;
+padding-left: 20px;
+}
+
+.midBannerBlock>.midBannerArticle>.firstRow>.paraBlock>.paraBlockDiv{
+width: 100%;
+height:50%;
+}
+
+.midBannerBlock>.midBannerArticle>.firstRow>.paraBlock>.paraBlockDiv>.textContent{
+width: 100%;
+height:50%;
+margin-bottom: 10px;
+font-size: 17px;
+color: white;
+font-family: Arial, sans-serif;
+font-weight: 300;
+margin-top: 15px;
+text-align: justify;
+
+}
+.midBannerBlock>.midBannerArticle>.firstRow>.paraBlock>.btn{
+width: 100%;
+height:50%;  
+padding-top: 10px;
+margin-top: 35px;
+/* margin-bottom: 30px; */
+float: left;
+}
+
+/* danger zone strts here */
+
+.bottomBannerBg{
+width: 100%;
+height: 153vh; 
+background-size: 100%;
+background-repeat: no-repeat;
+position: relative;
+z-index:-1;
+}
+
+.resourcesDivCard{
+background-color: #965c5b;
+height: 322px;
+margin-top: -33px;
+margin-left: 30px;
+margin-right: 30px;
+
+}
+
+.splittedTile{
+margin-left: -16px;
+margin-right: -16px;
+height:283px;
+
+}
+.revaEngageTileIcon{
+margin-top: 15%;
+margin-left: 15%;
+background-size: 100%;
+background-repeat: no-repeat;
+width:73%;
+}
+.revaVolunteerTileIcon{
+margin-top: 15%;
+margin-left: 15%;
+background-size: 100%;
+background-repeat: no-repeat;
+width:50%;
+}
+.revaGivingTileIcon{
+margin-top: 15%;
+margin-left: 15%;
+background-size: 100%;
+background-repeat: no-repeat;
+width:50%;
+}
+.contactBookIcon{
+margin-top: 15%;
+margin-left: 34%;
+background-size: 100%;
+background-repeat: no-repeat;
+width: 46%;
+
+}
+.folderIcon{
+margin-top: 15%;
+margin-left: 34%;
+background-size: 100%;
+background-repeat: no-repeat;
+width: 46%;
+}
+.myResourcesCardTitles{
+margin-top: 2%;
+margin-left:7%;
+font-size: 25px;
+color: white;
+font-family: Arial, sans-serif;
+font-weight: 300;
+
+}
+.myResourcesCardContent{
+font-size: 15px;
+line-height: 233%;
+color: white;
+margin-left: 7%;
+margin-top: 4%;
+font-family: Arial, sans-serif;
+font-weight: 300;
+}
+.resourceCardEventContent{
+font-size: 15px;
+
+color: white;
+margin-left: 7%;
+margin-top: 4%;
+font-family: Arial, sans-serif;
+font-weight: 300;
+}
+.ResourcesCard_knowMoreButton{
+margin-top: 5%;
+margin-left: 66%;
+width: 29%;
+background: transparent;
+color: white;
+}
+.tileHeadings{
+margin-top: 15%;
+margin-right:32%;
+font-size: 25px;
+color: white;
+font-family: Arial, sans-serif;
+font-weight: 300;
+text-align-last: right;
+}
+.tileTextContent{
+font-size: 17px;
+margin-top: 7%;
+color: white;
+font-family: Arial, sans-serif;
+font-weight: 300;
+margin-left: 9%;
+text-align: justify;
+
+}
+.secondRowTileButton{
+margin-top: 31%;
+margin-left: 21%;
+width: 45%;
+background: transparent;
+color: white;
+}
+.secondRowSecondTileButton{
+margin-top: 47%;
+margin-left: 21%;
+width: 45%;
+background: transparent;
+color: white;
+}
+.splitTileTextContent{
+margin-top: 35px;
+margin-left:45px;
+font-size: 25px;
+color: white;
+font-family: Arial, sans-serif;
+font-weight: 300;
+text-align-last: left;
+line-height: 1;
+}
+.tileButton{
+margin-top: 33%;
+margin-left: 21%;
+width: 45%;
+background: transparent;
+color: white;
+}
+.tileButton_2{
+margin-top: 20%;
+margin-left: 21%;
+width: 45%;
+background: transparent;
+color: white;
+}
+.knowMoreButton{
+
+margin-top: 53%;
+margin-left: 16%;
+width: 52%;
+background: transparent;
+color: white;
+}
+
+.img1{
+display: block;
+margin: 0 auto;
+width: 112px;;
+height: auto;
+float: left;   
+}
+
+.img2{
+display: block;
+margin: 0 auto;
+width: 108px;;
+height: auto;
+float: left;   
+}
+
+/* card 4 starts her */
+.card4{
+background-size: cover;
+background-repeat: no-repeat;
+background-color: rgba(0, 0, 0, 0.1);
+height:76vh;
+
+}
+.midBannerBlockRow2{
+/* width:100%; */
+/* height:72vh; */
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.midBannerRowArticle{
+width:100%;
+height:100%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+.cardBlock4{
+width:100%;
+height:100%;
+display: flex;
+justify-content: center;
+align-items: flex-start;
+z-index: 1;
+/* align-items: center; */
+}
+.contentBlock{
+width: 100%;
+height:60%;
+display:flex;
+flex-direction: column;
+}
+/* card 5 starts here */
+
+.secondRowSecondTileTextContent{
+font-size: 17px;
+color: #fff;
+font-family: Arial, sans-serif;
+font-weight: 300;
+text-align: justify;
+}
+.secondRowTileHeadings{
+margin-top: 35px;
+margin-left: 35px;
+font-size: 25px;
+color: #fff;
+font-family: Arial, sans-serif;
+font-weight: 300;
+line-height: 1
+
+}
+.secondRowTileTextContent{
+font-size: 17px;
+margin-top: 140px;
+color: #fff;
+font-family: Arial, sans-serif;
+font-weight: 300;
+margin-left: 9%;
+text-align: justify;
+display: flex;
+justify-content: left;
+width: 100%;
+letter-spacing: 3px;
+
+}
+
+
+
+/* 5 crad */
+.card5{
+background-size: cover;
+background-repeat: no-repeat;
+background-color: rgba(0, 0, 0, 0.1);
+height:76vh;
+
+}
+.midBannerRow5{
+/* width:100%; */
+height: 76vh;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.midBannerRowArticle5{
+width:100%;
+height:100%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+.cardBlock5{
+width:100%;
+height:100%;
+display: flex;
+justify-content: center;
+align-items: flex-start;
+z-index: 1;
+/* align-items: center; */
+}
+.contentBlock1{
+width: 100%;
+height:60%;
+display:flex;
+flex-direction: column;
+}
+/* card 5 starts here */
+
+.secondRowSecondTileTextContent1{
+font-size: 17px;
+color: #fff;
+font-family: Arial, sans-serif;
+font-weight: 300;
+text-align: justify;
+margin-left: 35px;
+}
+.secondRowTileHeadings1{
+margin-top: 35px;
+margin-left: 35px;
+font-size: 25px;
+color: #fff;
+font-family: Arial, sans-serif;
+font-weight: 300;
+line-height: 1
+
+}
+.secondRowTileTextContent1{
+font-size: 17px;
+margin-top: 140px;
+color: #fff;
+font-family: Arial, sans-serif;
+font-weight: 300;
+margin-left: 9%;
+text-align: justify;
+display: flex;
+justify-content: left;
+width: 100%;
+letter-spacing: 3px;
+
+}
+
+.splitBlock{
+width: 100%;
+height:76vh;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.slpitBlockArticle{
+width: 100%;
+height:100%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+.topOne{
+width: 100%;
+height:50%;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.bottomOne{
+width: 100%;
+height:50%;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.headingLine{
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: stretch;
+height: 100%;
+}
+.dottedBlock{
+    border-right: dotted 2px #fff;
+}
+.contactImg{
+    float: right;
+    margin-right: 50px;
+    margin-bottom: 84px;
+}
+
+/* screen width 500px */
+@media screen and (min-width: 500px) {
+.midBlockParentMob {
+    height:271vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+.topBannerBgMob{
+    height:63vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.contactImgMob{
+    float: right;
+    margin-right: 50px;
+    margin-bottom: 94px;
+}
+
+.headingLineMob{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 80%;
+}
+.bottomOneMob{
+    width: 100%;
+    height:30%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+.topOneMob{
+    width: 100%;
+    height:30%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+.card4Mob{
+    height: 80vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.1)  
+}
+.splitBlockMob{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+}
+
+/* screen width 700 px */
+@media screen and (min-width: 700px) {
+    .midBlockParentTab {
+        height:330vh;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .topBannerBgTab{
+        height:100vh;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .contactImgTab{
+        float: right;
+        margin-right: 50px;
+        margin-bottom: 4px; 
+    }
+    .resourcesDivCardTab{
+        background-color: #965c5b;
+    height: 350px;
+    margin-top: -33px;
+    margin-left: 30px;
+    margin-right: 30px;
+    }
+    .bottomOneLap{
+        width: 100%;
+        height:30%;
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+    }
+}
+@media screen and (min-width: 900px) {
+.midBlockParentLap {
+height:390vh;
+background-size: cover;
+background-repeat: no-repeat;
+}
+.topBannerBgLap{
+    height:100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.splitBlockLap{
+    width: 100%;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+.contactImgLap{
+    float: right;
+    margin-right: 50px;
+    margin-bottom: 84px;
+}
+.topOneLap{
+    width: 100%;
+    height:50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    .bottomOneLap{
+    width: 100%;
+    height:50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    
+    .headingLineLap{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: stretch;
+    height: 100%;
+    }
+
+}
+@media screen and (min-width: 1200px) {
+.midBlockParent {
+/* Add or adjust properties for larger screens */
+height: 110vh; 
+background-size: cover;
+background-repeat: no-repeat;
+
+}
+.midBannerRow5{
+    /* width:100%; */
+    height: 76vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+.card5{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.1);
+    height:76vh;
+    }
+.splitBlock{
+    width: 100%;
+    height:76vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    .slpitBlockArticle{
+    width: 100%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+    .topOne{
+    width: 100%;
+    height:50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    .bottomOne{
+    width: 100%;
+    height:50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    .headingLine{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: stretch;
+        height: 100%;
+        }
+    .contactImg{
+        float: right;
+        margin-right: 50px;
+        margin-bottom: 84px;
+    }
+}

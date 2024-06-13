@@ -1,0 +1,201 @@
+.sub-header-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    background-color: var(--reva-background-page-color);
+    padding: 5px 24px 5px 24px;
+    align-items: center;
+}
+
+.img-container {
+    min-width: 20px;
+}
+
+.img-container img {
+    height: 20px;
+    width: 20px;
+    object-fit: contain;
+}
+
+.img-container-my-360 {
+    min-width: 70px;
+}
+
+.img-container-my-360 img {
+    height: 20px;
+    width: 70px;
+    object-fit: contain;
+}
+
+.sub-header {
+    padding: 0 24px;
+    border-right: 0.0625rem dotted black;
+    min-height: 2rem;
+}
+
+.sub-header:last-child {
+    border: none;
+    padding-right: 0;
+}
+
+.E-Library a {
+    text-decoration: none;
+    color: var(--reva-brand-color, orange);
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.img-container {
+    position: relative;
+}
+
+.menu {
+    border: 0.0625rem solid #ccc;
+    position: absolute;
+    right: -0.625rem;
+    --caret-left: 86%;
+    top: 1.875rem;
+    background-color: white;
+    width: 12.5rem;
+    box-shadow: 0rem 0.5rem 1rem 0rem rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    margin-top: 0.625rem;
+}
+
+.menu::before {
+    content: "";
+    position: absolute;
+    top: -1.4375rem;
+    left: var(--caret-left);
+    margin-left: -0.3125rem;
+    border-width: 0.75rem;
+    border-style: solid;
+    border-color: transparent transparent white transparent;
+}
+
+.flyout {
+    position: absolute;
+    background: white;
+    border: 0.0625rem solid #ccc;
+    top: 100%;
+    left: 1.5rem;
+    z-index: 1000;
+    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.2);
+    width: calc(100% - 3rem);
+}
+
+.menu ul,
+.flyout ul {
+    list-style: none;
+    padding: 0.3125rem 0;
+    margin: 0;
+}
+
+.menu ul li a,
+.flyout ul li a {
+    display: block;
+    padding: 0.625rem;
+    text-decoration: none;
+    color: black;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.menu ul li a:hover,
+.flyout ul li a:hover {
+    background-color: var(--reva-background-page-color);
+    text-decoration: underline;
+}
+
+.search-container {
+    position: relative;
+    width: 17.8125rem;
+}
+
+.search-container .slds-input {
+    border-radius: 0;
+    border-color: lightgrey;
+    font-size: 13px;
+}
+
+.search-icon {
+    position: absolute;
+    right: 1.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background-image: url('/sfsites/c/resource/SR_STUDENTPORTALASSETS/StudentPortalAssests/Icons/Header-Icons/search.png');
+    background-size: cover;
+    width: 1rem;
+    height: 1rem;
+    pointer-events: none;
+}
+
+@media only screen and (max-width: 47.9375rem) {
+    .E-Library a {
+        font-size: 13px;
+    }
+
+    .img-container-my-360 {
+        min-width: 50px;
+    }
+
+    .img-container-my-360 img {
+        height: 20px;
+        width: 50px;
+    }
+
+    .img-container {
+        min-width: 20px;
+    }
+
+    .img-container img {
+        height: 20px;
+        width: 20px;
+    }
+
+    .sub-header {
+        padding: 0;
+        padding-right: 0.9375rem;
+    }
+
+    .sub-header,
+    .search-container {
+        border-right: none;
+    }
+
+    .search-container {
+        order: 2;
+        flex-basis: 100%;
+        padding: 0;
+    }
+
+    .search-container .slds-input {
+        width: 100%;
+    }
+
+    .search-icon {
+        right: 0.625rem;
+    }
+
+    .sub-header-wrapper {
+        justify-content: space-between;
+        position: relative;
+        padding-bottom: 0;
+    }
+
+    .img-container {
+        position: static;
+    }
+
+    .menu {
+        width: calc(100% - 1.25rem);
+        left: 0.625rem;
+    }
+
+    .flyout {
+        left: 0px;
+        width: 100%;
+        top: 80%;
+    }
+}

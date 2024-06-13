@@ -1,0 +1,67 @@
+.THIS td {
+    width: 50%;
+}
+.THIS .slds-grid {
+    margin: 0px !important;
+    padding: 0px !important;
+}
+.THIS.full-width {
+  width: 100%;
+}
+.THIS .custom-button {
+    background-color: #66535b;
+}
+
+/* Changes Added by Venugopal */
+
+.THIS ::placeholder {
+    color:rgb(255, 255, 255);
+    /* content:'replacement string'; */
+}
+
+.THIS :placeholder-shown{
+   
+}
+
+.THIS .slds-card__body{
+     /* background-image: linear-gradient(#d1a9b4,#e0cdd8);  */
+     /* background-image: linear-gradient( to right, rgb(216, 196, 207), rgb(206, 167, 180)); */
+     /* background-image: linear-gradient(to right,  rgb(216, 196, 207), rgb(206, 167, 180)); */ 
+     
+     background-color: #EFDFD0;  
+   
+}
+
+
+.THIS {
+    background-color: rgb(66, 57, 57); 
+  }
+
+.THIS input{
+    --slds-c-input-radius-border : 0 rem; 
+    --slds-c-input-color-background : #316d8e;  
+    --slds-c-input-text-color : white;
+    --slds-c-input-color-border : white;
+     opacity: 0.8;
+}
+
+.THIS select {
+    --slds-c-select-color-background : #316d8e;
+    --slds-c-select-color-background-focus : #316d8e !important;
+    --slds-c-select-color-border : white;
+    --slds-c-select-color-border-focus : white;
+    --slds-c-select-text-color : white !important;
+    --slds-c-select-text-color-focus : white;
+    opacity: 0.8;
+   
+}
+
+.THIS button {
+    --slds-c-button-brand-color-background :#3f2c31 ;
+    
+     --slds-c-button-color-background :#3f2c31 ;
+}
+.THIS .slds-form-element__label {
+    color: black;
+}
+

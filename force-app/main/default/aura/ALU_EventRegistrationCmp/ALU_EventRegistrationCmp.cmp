@@ -1,0 +1,89 @@
+<aura:component Controller="ALU_EventRegistrationCmp_Ctrl" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="listEventActvities" type="List"/>
+    <aura:attribute name="SelDocID" type="String"/>
+    <aura:attribute name="disableActivity" type="boolean"/>
+    <aura:handler name="init" action="{!c.getEvntActivities}" value="{!this}"/>
+    <aura:attribute name="tooltip" type="boolean" default="false" />
+    <aura:attribute name="alumActivityId" type="string"/> 
+    <aura:attribute name="hasModalOpen" type="boolean" default="false"/>
+    <aura:attribute name="ContentWrap" type ="object"/>
+
+    <lightning:layout multipleRows="true">
+	<lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="12" largeDeviceSize="12" >
+		 <aura:if isTrue="{!not(empty(v.listEventActvities))}">
+        <div class="slds-scrollable_y slds-scrollable_x" style="height:23rem;width:100%;" tabindex="0">
+            <table class="slds-table slds-table--bordered slds-table--cell-buffer slds-table--striped">
+                <thead style="position: sticky; top: 0; background-color: white; z-index: 1;">
+                    <tr class="slds-text-heading--label">
+                        <th class="slds-is-resizable" scope="col" style="text-align:center;">
+                            Sl.No.
+                        </th>
+                        <th class="slds-is-resizable" scope="col" style="text-align:center;">
+                            Name
+                        </th>
+                        <th class="slds-is-resizable" scope="col" style="text-align:center;">
+                            Date
+                        </th>
+                        <th class="slds-is-resizable" scope="col" style="text-align:center;">
+                            Venue
+                        </th>
+                        <th class="slds-is-resizable" scope="col" style="text-align:center;">
+                            Registration
+                        </th>
+                        <th class="slds-is-resizable" scope="col" style="text-align:center;">
+                            Cancel
+                        </th>         
+                    </tr>
+                </thead>
+                <tbody>
+                    <aura:iteration items="{!v.listEventActvities}" var="emp" indexVar="index"> 
+                        <tr>
+                            <td class="slds-is-resizable" scope="col" style="text-align:center;">
+                                <b>{!index+1}</b>
+                            </td>
+                            <td class="slds-is-resizable" scope="col" style="text-align:center;">
+                                <a data-Id= "{!emp.AlumniId}" href="javascript:void(0)" onclick="{!c.getSelected}"> 
+                                   {!emp.AlumniName} </a> 
+                            </td>
+                            <td class="slds-is-resizable" scope="col" style="text-align:center;">
+                                <b>{!emp.AlumniDate}</b> 
+                            </td>
+                            <td class="slds-is-resizable" scope="col" style="text-align:center;">
+                                <b>{!emp.AlumniVenue}</b>
+                            </td>
+                            <td scope="row" data-label="Action" style="width:140px;">       
+                                <lightning:button variant="brand" label="Registration"  value="{!emp.AlumniId}"  title="Registration action"   onclick="{!c.OnRegistration}" disabled="{!emp.disable}" />
+                            </td>
+                            <td scope="row" data-label="Action" style="width:140px;">       
+                                <lightning:button label="Cancel"  title="Cancel action " value="{!emp.AlumniId}" disabled="{!!emp.disable}" onclick="{!c.OnCancel}"   />
+                            </td>
+                        </tr>
+                    </aura:iteration> 
+                </tbody>
+            </table> 
+            <aura:if isTrue="{!v.hasModalOpen}">
+                <section onclick="{!c.closeModel}"
+                         role="dialog"
+                         aria-modal="true"
+                         class="slds-modal slds-fade-in-open">
+                    <div class="slds-modal__container">
+                        <div class="slds-modal__content slds-p-around_medium slds-text-align_center"
+                             style="background: transparent;">
+                            <div style="width: 50%; margin: 0 auto; text-align: left">
+                                <lightning:fileCard fileId="{!v.ContentWrap.ContDocIds}"/>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="slds-backdrop slds-backdrop_open"></div>
+            </aura:if>
+        </div>
+        
+        <aura:set attribute="else">               
+            <center> <b> No Data Available </b> </center>
+        </aura:set> 
+    </aura:if>
+	</lightning:layoutItem>
+</lightning:layout>
+   
+</aura:component>

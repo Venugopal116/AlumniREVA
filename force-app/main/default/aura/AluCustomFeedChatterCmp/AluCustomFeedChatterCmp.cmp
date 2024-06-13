@@ -1,0 +1,18 @@
+<aura:component implements="force:appHostable,forceCommunity:availableForAllPageTypes">
+   
+        <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+        <aura:attribute name="options" type="List" />
+        <aura:attribute name="type" type="String" default="News" description="The type of feed" access="GLOBAL"/>
+        <aura:attribute name="types" type="String[]"
+                        default="Bookmarks,Company,DirectMessages,Feeds,Files,Filter,Groups,Home,Moderation,Mute,News,PendingReview,Record,Streams,To,Topics,UserProfile"
+                        description="A list of feed types"/>
+        <h1>My Feeds</h1>
+        <lightning:select aura:id="typeSelect" onchange="{!c.onChangeType}" label="Type" name="typeSelect">
+            <aura:iteration items="{!v.options}" var="item">
+                <option text="{!item.label}" value="{!item.value}" selected="{!item.selected}"/>
+            </aura:iteration>
+        </lightning:select>
+        <div aura:id="feedContainer" class="feed-container">
+            <forceChatter:feed />
+        </div>
+    </aura:component>	

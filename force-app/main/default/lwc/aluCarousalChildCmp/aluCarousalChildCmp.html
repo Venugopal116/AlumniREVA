@@ -1,0 +1,26 @@
+<template>
+    <div class="slds-is-relative container" style="background: #23a1b5;">
+        <!-- style={maxWidth}  -->
+        <template for:each={slidesData} for:item="slide">
+            <a href={slide.link} key={slide.index} class={slide.slideClass} onmouseover={handleMouseOver}
+                onmouseout={handleMouseOut}>
+                <div class="slds-p-around_small" style="color:white;">
+                    <p>{slide.Alumni_Message__c}</p><br/>
+
+                </div>
+                <div style="text-align:center; color:white;  font-size: 14px;">
+                    <strong>{slide.Alumni_Name__c}</strong> &nbsp; {slide.Degree_Stream__c} &nbsp;- {slide.Year__c}
+                </div>
+               
+            </a>
+        </template>
+
+        <a if:false={hideNavigationButtons} class="prev" onclick={slideBackward}>&#10094;</a>
+        <a if:false={hideNavigationButtons} class="next" onclick={slideForward}>&#10095;</a>
+    </div>
+    <div if:false={hideNavigationDots} class="slds-text-align_center slds-p-around_medium">
+        <template for:each={slidesData} for:item="slide">
+            <span key={slide.index} class={slide.dotClass} data-id={slide.index} onclick={showSlide}></span>
+        </template>
+    </div>
+</template>

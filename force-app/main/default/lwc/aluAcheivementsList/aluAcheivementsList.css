@@ -1,0 +1,183 @@
+.custom-container {
+    border: 2px solid orange;
+    border-radius: 10px; /* Adjust the border-radius as needed for round corners */
+    padding: 10px; /* Adjust padding as needed */
+}
+.slds-table thead th {
+    color: white;
+    background-color: #656263;
+    line-height: normal;
+}
+.slds-table td {
+    
+    white-space: nowrap;
+    position: relative;
+    background-color: #d3d3d3;
+    border-top: solid 3px white;
+    border-bottom: solid 3px white;
+}
+
+
+.tileHeading{
+   
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+    text-align: left;
+    
+}
+
+.slds-tabs_custom {
+    overflow: hidden;
+}
+
+.slds-tabs_custom__nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.slds-tabs_custom__nav li {
+   /*  margin-right: 2px; Adjust the gap between tabs as needed */
+}
+
+.slds-tabs_custom__nav li a {
+    padding: 10px;
+    text-decoration: none;
+    color: black; /* Default text color */
+    background-color: transparent; /* Default background color */
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: 600; /* Bold text */
+    width: 120px; /* Adjust the width of the tabs as needed */
+    text-align: center; /* Center text */
+    font-size: 18px;
+}
+
+.slds-tabs_custom__nav li:hover {
+    background-color: #EFDFD0; /* Hover background color */
+}
+
+.slds-tabs_custom__nav li.slds-is-active {
+    background-color: orange; /* Active tab background color */
+}
+
+.slds-tabs_custom__nav li.slds-is-active a {
+    color: white; /* Active tab text color */
+}
+
+
+
+/*Tab And Table CSS*/
+
+.container{
+    min-height: 100%;
+    background-color: white;
+    padding : 1rem;
+    border: 2px solid orange;
+    border-radius: 10px;
+    min-width: 100%;
+}
+
+.tabs{
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap:0.5rem;
+    margin-bottom: 1rem;
+    justify-content: flex-start;
+
+}
+
+.tab{
+    font-weight: 750;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    background-color: #FEF3EA;
+    min-height: 2rem;
+    padding: 0.5rem;
+    min-width: 15vw;
+    max-width: 50vw;
+}
+
+.tab:first-child{
+    background-color: #F57F26;
+    color: white;
+}
+
+table {
+    width: 100%;
+    background-color: white;
+}
+
+
+table, th, td {
+    border-collapse: collapse;
+    padding: 1rem;
+    text-align: left;
+}
+
+thead th {
+    top: 0;
+    left: 0;
+    background-color: #646263;
+    cursor: pointer;
+    color: white;
+}
+
+tbody tr:nth-of-type(2n-1) {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: #E6E6E6;
+    }
+    tbody tr:nth-of-type(2n) {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: #f5f5f5;
+    }
+
+td strong{
+    cursor: pointer;
+}
+
+@media (min-width:800px){
+    .tab{
+        font-size: 1rem;
+    }
+}
+@media (max-width: 650px) {
+
+    td{
+        display: grid;
+        grid-template-columns: 21ch auto;
+        gap:0.5rem;
+        padding: 0.5rem 1rem;
+    }
+
+    td:first-child{
+        padding-top: 2rem;
+    }
+
+    td:last-child{
+        padding-bottom: 2rem;
+    }
+    th{
+        display: none;
+    }
+    td::before{
+        content: attr(data-cell) " : ";
+        font-weight: 700;
+    }
+    tbody tr:nth-of-type(2n-1) {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: #E6E6E6;
+    }
+    tbody tr:nth-of-type(2n) {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: #f5f5f5;
+    }
+}

@@ -1,0 +1,113 @@
+<template>
+
+    <lightning-layout class="container slds-p-around_medium" multiple-rows>
+
+    <lightning-layout-item size="12" small-device-size="12" medium-device-size="12" large-device-size="12"
+        padding="horizontal-small">
+        <div class="custom-box">
+            <h1 style="font-size:large;">ENTER YOUR ACHIEVEMENTS</h1>
+        </div>
+    </lightning-layout-item>
+
+        <lightning-layout-item size="12" small-device-size="12" medium-device-size="6" large-device-size="6"
+            padding="horizontal-small">
+            <lightning-input type="text" variant="standard" name="name" label="Achievement" placeholder="" value={achievement} onchange={handleAchievement}></lightning-input>
+            <!-- <div class="custom-box">
+                <label>
+                    <abbr class="slds-required" title="required">*</abbr>Achievement</label>
+                <div class="input-container">
+                    <input name="Achievement" type="text" placeholder=""  required
+                          value={achievement} onchange={handleAchievement}
+                        />
+                    <div class="error-message"></div><br>
+                </div>
+            </div> -->
+        </lightning-layout-item>
+        <lightning-layout-item size="12" small-device-size="12" medium-device-size="6" large-device-size="6"
+            padding="horizontal-small">
+            <lightning-input type="date" variant="standard" name="name" label="Date" placeholder="" value={dateVal} onchange={handleDateChange}></lightning-input>
+            <!-- <div class="custom-box">
+                <label>Date</label>
+                <div class="input-container">
+                    <input name="Date"  type="date" placeholder=""  value={dateVal}
+                        onchange={handleDateChange} 
+                        />
+                    <div class="error-message"></div><br>
+
+                </div>
+            </div> -->
+        </lightning-layout-item>
+        <lightning-layout-item size="12" small-device-size="12" medium-device-size="6" large-device-size="6"
+            padding="horizontal-small">
+            <lightning-input type="text" variant="standard" name="name" label="Organisation" placeholder="" value={organization} onchange={handleOrganizationChange}></lightning-input>
+            <!-- <div class="custom-box">
+                <label> <abbr class="slds-required" title="required">*</abbr>Organisation</label>
+                <div class="input-container">
+                    <input name="Organisation" type="text" placeholder="" value={organization} required
+                         onchange={handleOrganizationChange}
+                        />
+                    <div class="error-message"></div><br>
+
+                </div>
+            </div> -->
+        </lightning-layout-item>
+
+        <lightning-layout-item size="12" small-device-size="12" medium-device-size="6" large-device-size="6"
+            padding="horizontal-small">
+            <lightning-input type="text" variant="standard" name="name" label="Title/Designation" placeholder="" value={designation} onchange={handleDesignationChange}></lightning-input>
+
+            <!-- <div class="custom-box">
+                <label> <abbr class="slds-required" title="required">*</abbr>Title/Designation</label>
+                <div class="input-container">
+                    <input name="Designation" type="text" placeholder="" value={designation} required
+                         onchange={handleDesignationChange}
+                        />
+                    <div class="error-message"></div><br>
+
+                </div>
+            </div> -->
+        </lightning-layout-item>
+
+       
+
+
+
+        <lightning-layout-item class="slds-p-top_medium" size="12" small-device-size="12" medium-device-size="12" large-device-size="12"
+            padding="horizontal-small">
+
+            <lightning-input-rich-text name="Image" label="Image" value={image} onchange={handleImageChange}>
+
+        </lightning-input-rich-text>
+
+        </lightning-layout-item>
+
+        <lightning-layout-item class="slds-p-top_medium" size="12" small-device-size="12" medium-device-size="12" large-device-size="12"
+            padding="horizontal-small">
+
+            <lightning-input-rich-text name="Description" label="Achievement Description" value={description} onchange={handleDescriptionChange}>
+
+        </lightning-input-rich-text>
+
+        </lightning-layout-item>
+
+        <lightning-layout-item  class="slds-p-top_medium" size="12" small-device-size="12" medium-device-size="12" large-device-size="12"
+        padding="horizontal-small">
+        <lightning-file-upload label="File Upload" name="file" accept={acceptedFormats} onuploadfinished={handleUploadFinished}></lightning-file-upload>
+
+    </lightning-layout-item>
+
+
+    <lightning-layout-item class="slds-p-top_medium" size="12" small-device-size="12" medium-device-size="12" large-device-size="12"
+            padding="horizontal-small">
+
+    <!-- <lightning-button class="slds-p-top_medium buttonCss"  variant="" label="Save" title="Save" onclick={handleSave}></lightning-button> -->
+    <lightning-button class="slds-button"  label="Save" title="" onclick={handleClick} disabled={isSaveBtnDisabled}></lightning-button>
+
+        </lightning-layout-item>
+
+       
+
+
+    </lightning-layout>
+    
+</template>

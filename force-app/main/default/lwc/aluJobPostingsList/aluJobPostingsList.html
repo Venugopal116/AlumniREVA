@@ -1,0 +1,75 @@
+<template>
+    <lightning-layout class="custom-container" multiple-rows>
+        <lightning-layout-item class="slds-p-vertical_medium" size="12" small-device-size="12" medium-device-size="12" large-device-size="12">
+            
+            <div class="slds-tabs_custom">
+                <ul class="slds-tabs_custom__nav" role="tablist">
+                    <li class={openJobsClass} title="Item One" role="presentation">
+                        <a class="slds-tabs_custom__link" href="#" role="tab" tabindex="0"
+                            aria-selected={isOpenJobsSelected} onclick={handleTabClick}
+                            data-tab="openJobsTab" aria-controls="tab-default-1" id="tab-default-1__item">
+                            OPEN JOB
+                        </a>
+                    </li>
+                    <li class={postJobClass} title="Item Two" role="presentation">
+                        <a class="slds-tabs_custom__link" href="#" role="tab" tabindex="-1"
+                            aria-selected={isPostJobSelected} onclick={handleTabClick}
+                            data-tab="postAjobTab" aria-controls="tab-default-2" id="tab-default-2__item">
+                            POST JOB
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+        </lightning-layout-item>
+        
+         <!-- all blogs selected -->
+         <lightning-layout-item if:true={isOpenJobsSelected} size="12" small-device-size="12" medium-device-size="12" large-device-size="12" padding="vertical-medium">
+            <div class="slds-scrollable_y" style="height:15rem;width:100%;" tabindex="0">
+                <table class="slds-table slds-table_cell-buffer slds-table_bordered" aria-label="Example default base table of Opportunities">
+                    <thead style="position: sticky; top: 0; background-color: white; z-index: 1;">
+                        <tr class="slds-line-height_reset">
+                            <th class="" scope="col">
+                                <div class="slds-truncate" title="Opportunity Name">Activity Number</div>
+                            </th>
+                            <th class="" scope="col">
+                                <div class="slds-truncate" title="Account Name">Company Name</div>
+                            </th>
+                            <th class="" scope="col">
+                                <div class="slds-truncate" title="Close Date">Designation</div>
+                            </th>
+                            <th class="" scope="col">
+                                <div class="slds-truncate" title="Stage">Status</div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template if:true={recordsList}>
+                            <template for:each={recordsList} for:item="rec">
+                                <tr key={rec.Id} class="slds-hint-parent" style="padding:10px;">
+                                    <td key={rec.Id} data-label="Account Name">
+                                        <a data-id={rec.Id} onclick={navigateToRecord} class="slds-truncate" title="Activity Number">{rec.Name}</a>
+                                    </td>
+                                    <td key={rec.Id} data-label="Close Date">
+                                        <div class="slds-truncate" title="Contact Name">{rec.Company_Name__c}</div>
+                                    </td>
+                                    <td key={rec.Id} data-label="Prospecting">
+                                        <div class="slds-truncate" title="Blog Name">{rec.Designation__c}</div>
+                                    </td>
+                                    <td key={rec.Id} data-label="Confidence">
+                                        <div class="slds-truncate" title="Blog Link">{rec.Status__c}</div>
+                                    </td>
+                                </tr>
+                            </template>
+                        </template>
+                    </tbody>
+                </table>
+            </div>
+        </lightning-layout-item>
+         <!-- enter blog -->
+         <lightning-layout-item  if:true={isPostJobSelected}  size="12" small-device-size="12" medium-device-size="12" large-device-size="12" padding="vertical-medium" >
+            <h1>enter blog</h1> 
+         </lightning-layout-item>
+        
+    </lightning-layout>
+</template>

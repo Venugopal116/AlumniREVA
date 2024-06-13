@@ -1,0 +1,140 @@
+<template>
+
+  <div class="container">
+    <div class="tabs">
+        <div class="tab" tabindex="0" data-step="1" onclick={handleStepClick}>ALL BLOGS</div>
+        <div class="tab" tabindex="0" data-step="2" onclick={handleStepClick}> ENTER BLOG </div>
+    </div>
+    <template if:true={isAllBlogselected}>
+                <section>
+                    <table class="slds-text-heading_small">
+                        <thead>
+                            <tr>
+                                <th> Activity Number </th>
+                                <th> Contact Name </th>
+                                <th> Blog Name </th>
+                                <th> Blog Link </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                          <template if:true={blogsList}>
+                            <template for:each={blogsList} for:item="blg">
+                                <tr key={blg.Id}>
+                                    <td key={blg.Id} data-cell="Activity Number">
+                                        <p class="slds-text-link pointer-hover" data-id={blg.id}
+                                            onclick={navigateToRecord}>
+                                            <strong data-id={blg.id}>{blg.Name}</strong>
+                                        </p>
+                                    </td>
+                                    <td key={blg.Id} data-cell="Contact Name">
+                                        <strong>{blg.Contact_Name__c}</strong>
+                                    </td>
+                                    <td key={blg.Id} data-cell="Blog Name">
+                                        <strong>{blg.Blog_Name__c}</strong>
+                                    </td>
+                                    <td key={blg.Id} data-cell="Blog Link">
+                                        <strong>{blg.Blog_Link__c}</strong>
+                                    </td>
+                                </tr>
+                            </template>
+                          </template>
+
+                          <template if:true={noRecordsData}>
+                            <div style="text-align:center;color:red;" class="slds-p-top_large">
+                                No Records to Display
+                            </div>
+                          </template>
+
+                        </tbody>
+                    </table>
+                </section>
+            </template>
+
+            <template if:true={isEnterBlogSelected}>
+              <lightning-flow flow-api-name='Enter_Blogs' >
+              </lightning-flow>
+
+            </template>
+           
+  </div>
+
+    <!-- <lightning-layout class="custom-container" multiple-rows> -->
+        <!-- <lightning-layout-item class="slds-p-bottom_medium" size="12" small-device-size="12" medium-device-size="12" large-device-size="12" >
+
+                <div class="slds-tabs_custom">
+                    <ul class="slds-tabs_custom__nav" role="tablist">
+                        <li class={allBlogsClass} title="Item One" role="presentation">
+                            <a class="slds-tabs_custom__link" href="#" role="tab" tabindex="0" 
+                                aria-selected={isAllBlogselected} onclick={handleTabClick} 
+                                data-tab="allblogs" aria-controls="tab-default-1" id="tab-default-1__item">
+                                ALL BLOGS
+                            </a>
+                        </li>
+                        <li class={enterBlogClass} title="Item Two" role="presentation">
+                            <a class="slds-tabs_custom__link" href="#" role="tab" tabindex="-1" 
+                                aria-selected={isEnterBlogSelected} onclick={handleTabClick} 
+                                data-tab="enterblog" aria-controls="tab-default-2" id="tab-default-2__item">
+                                ENTER BLOG
+                            </a>
+                        </li>
+                        
+                    </ul>
+                   
+                </div>
+          
+        </lightning-layout-item> -->
+        
+         <!-- all blogs selected -->
+        <!-- <lightning-layout-item  if:true={isAllBlogselected}  size="12" small-device-size="12" medium-device-size="12" large-device-size="12" padding="vertical-medium"  >
+          <div class="slds-scrollable_y" style="height:15rem;width:100%;" tabindex="0"> 
+          <table  class="slds-table slds-table_cell-buffer slds-table_bordered slds-scrollable_y" aria-label="Example default base table of Opportunities">
+            <thead style="position: sticky; top: 0; background-color: white; z-index: 1;">
+                  <tr class="slds-line-height_reset">
+                    <th class="" scope="col">
+                      <div class="slds-truncate" title="Opportunity Name" >Activity Number</div>
+                    </th>
+                    <th class="" scope="col">
+                      <div class="slds-truncate" title="Account Name">Contact Name</div>
+                    </th>
+                    <th class="" scope="col">
+                      <div class="slds-truncate" title="Close Date">Blog Name</div>
+                    </th>
+                    <th class="" scope="col">
+                      <div class="slds-truncate" title="Stage">Blog Link</div>
+                    </th>
+                   
+                  </tr>
+                </thead>
+                <tbody>
+                    <template if:true={blogsList}>
+                        <template  for:each={blogsList} for:item="blg">
+                  <tr key={blg.Id} class="slds-hint-parent" style="padding:10px;">
+                    <td key={blg.Id} data-label="Account Name">
+                      <a data-id={blg.Id} onclick={navigateToRecord} class="slds-truncate" title="Activity Number" >{blg.Name}</a>
+                    </td>
+                    <td key={blg.Id} data-label="Close Date">
+                      <div class="slds-truncate" title="Contact Name">{blg.Contact_Name__c}</div>
+                    </td>
+                    <td key={blg.Id} data-label="Prospecting">
+                      <div class="slds-truncate" title="Blog Name">{blg.Blog_Name__c}</div>
+                    </td>
+                    <td key={blg.Id} data-label="Confidence">
+                      <div class="slds-truncate" title="Blog Link">{blg.Blog_Link__c}</div>
+                    </td>
+               
+                    
+                  </tr>
+                </template>
+            </template>
+           
+                </tbody>
+              </table>
+            </div>
+        </lightning-layout-item> -->
+         <!-- enter blog -->
+         <!-- <lightning-layout-item  if:true={isEnterBlogSelected}  size="12" small-device-size="12" medium-device-size="12" large-device-size="12" padding="vertical-medium" >
+            <h1>enter blog</h1> 
+         </lightning-layout-item> -->
+        
+    <!-- </lightning-layout> -->
+</template>

@@ -1,0 +1,162 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 04-23-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+
+    <!-- New Layout -->
+
+    <div class="grid-container">
+        <div class="tile tile1">
+            <div class="container">
+                <div class="tile-heading">ACCOMPLISHMENTS <br> &nbsp;</div>
+                <div class="tile-text">Celebrate the triumphs and achievements of our distinguished REVA alumni
+                    community.</div>
+                <div class="bottom-images">
+                    <button data-pagename="Achievements__c" onclick={navigateTo_CommPage}
+                        class="slds-button slds-button_inverse button-class">View More</button>
+                    <div class="icons">
+                        <img src={accomplishmentsIocn} alt="Accomplishment Icon">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tile tile2">
+            <div class="container">
+                <div class="tile-heading">STAY <br />CONNECTED</div>
+                <div class="tile-text">Forge lasting connections with fellow alumni and stay updated seamlessly.</div>
+                <div class="bottom-images">
+                    <button data-pagename="Reva_Engage__c" onclick={navigateTo_CommPage}
+                        class="slds-button slds-button_inverse button-class">Chat Now</button>
+                    <div class="icons"><img src={stayConnectedIcon} alt="Connected Icon"></div>
+
+                </div>
+            </div>
+        </div>
+        <div class="tile tile3">
+            <div class="container">
+                <div class="tile-heading">EVENT<br />REGISTRATIONS</div>
+                <div class="tile-text">Register for engaging alumni events and be part of enriching experiences.</div>
+                <div class="bottom-images">
+                    <button data-pagename="EventRegistration__c" onclick={navigateTo_CommPage}
+                        class="slds-button slds-button_inverse button-class">Register Now</button>
+                    <div class="icons">
+                        <img src={eventRegIcon} alt="Event Icon">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tile tile4">
+            <div class="container">
+                <div class="tile-heading">SEEK<br />EMPLOYMENT</div>
+                <div class="tile-text">Explore career opportunities and elevate your professional journey with exclusive
+                    job searches.</div>
+                <div class="bottom-images">
+                    <button data-pagename="JobSeeking__c" onclick={navigateTo_CommPage}
+                        class="slds-button slds-button_inverse button-class">Apply Now</button>
+                    <div class="icons">
+                        <img src={seekEmploymentIocn} alt="Employment Icon">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tile tile5">
+            <div class="container">
+                <div class="tile-heading">JOB<br />ADS</div>
+                <div class="tile-text">Access curated job advertisements tailored for the diverse talents of REVA
+                    alumni.</div>
+                <div class="bottom-images">
+                    <button data-pagename="JobPosting__c" onclick={navigateTo_CommPage}
+                        class="slds-button slds-button_inverse button-class">Post Now</button>
+                    <div class="icons">
+                        <img src={jobAdsIcon} alt="Job Icon">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tile tile6">
+            <div class="container">
+                <div class="tile-heading">DIGITAL<br />CARDS</div>
+                <div class="tile-text">Effortlessly access your alumni identity with secure and convenient digital ID
+                    cards.</div>
+                <div class="bottom-images">
+                    <button data-pagename="DigitalCard__c" onclick={navigateTo_CommPage}
+                        class="slds-button slds-button_inverse button-class">Apply Now</button>
+                    <div class="icons">
+                        <img src={digitalCardsIcon} alt="Cards Icon">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tile tile7">
+            <div class="container">
+                <div class="tile-heading">ALUMNI<br />BLOGS</div>
+                <div class="tile-text">Read insightful blogs from accomplished alumni sharing their diverse perspectives
+                    and experiences.</div>
+                <div class="bottom-images">
+                    <button data-pagename="Blogs__c" onclick={navigateTo_CommPage}
+                        class="slds-button slds-button_inverse button-class">Post Now</button>
+                    <div class="icons">
+                        <img src={blogsIocn} alt="Blogs Icon">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tile tile8">
+            <div class="container">
+                <div class="tile-heading">ALUMNI<br />ASSIST</div>
+                <div class="tile-text">Extend support and assistance to fellow alumni, fostering a culture of mutual
+                    aid.</div>
+                <div class="bottom-images">
+                    <button data-pagename="Case_List__c" onclick={navigateToAlumniAssistPage}
+                        class="slds-button slds-button_inverse button-class">Raise a Request</button>
+                    <div class="icons">
+                        <img src={aluAssitIcon} alt="Assist Icons">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="combined">
+            <div class="tile tile9">
+                <div class="container">
+                    <div class="tile-heading">ALUMNI<br />FEEDBACK</div>
+                    <div class="tile-text">Share your valuable feedback to enhance the alumni experience and shape the
+                        future.</div>
+                    <div class="bottom-images">
+                        <button data-pagename="Survey__c" onclick={navigateTo_CommPage}
+                            class="slds-button slds-button_inverse button-class">Share your Views</button>
+
+                        <div class="icons">
+                            <img src={feedbackIcon} alt="Feedback Icon">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tile tile10">
+                <div class="container">
+                    <div class="tile-heading">CONTRIBUTIONS <br> &nbsp;</div>
+                    <div class="tile-text">Make a lasting impact through donations and contributions to support REVA's
+                        initiatives.</div>
+                    <div class="bottom-images">
+                        <button data-pagename="Donation__c" onclick={navigateTo_CommPage}
+                            class="slds-button slds-button_inverse button-class">Contribute Now</button>
+
+                        <div class="icons">
+                            <img src={contributionsIocn} alt="Contribution Icon">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</template>

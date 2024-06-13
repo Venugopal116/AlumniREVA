@@ -1,0 +1,158 @@
+<template>
+    <lightning-layout multiple-rows style="background-color: #17A2B8;"> 
+
+
+        <lightning-layout-item class="slds-p-top_small slds-p-horizontal_large " size="12" small-device-size="6" medium-device-size="6" large-device-size="6" >
+
+            <lightning-layout multiple-rows>
+                <lightning-layout-item class="slds-p-bottom_small" size="12" small-device-size="6" medium-device-size="6" large-device-size="8">
+                    <h1 class="myResourcesCardTitles" style="">Message From Chancellor</h1>
+                    <lightning-layout multiple-rows>
+                        <lightning-layout-item size="12" small-device-size="6" medium-device-size="6" large-device-size="5">
+                            <img  class="vcImg slds-p-top_small" src={vcPic}>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="12" small-device-size="12" medium-device-size="12" large-device-size="12" >
+                            <div class="slds-p-top_small slds-p-right_small">
+                                <h1 class="vcMsgBody"><b>Dear Alumni,</b></h1>
+                                <p class="vcMsgBody">I acknowledge the contribution of all the alumni who have made an indelible mark
+                                                     wherever they reached and proved the logo of the University “REVA”. We urge our 
+                                                     alumni for their active coordination, cooperation, guidance and constructive
+                                                      suggestion for the betterment of their alma mater.
+                                </p>
+                                <a class="slds-p-top_small aboutUsLink" target="_blank" href="https://alumni.reva.edu.in/about-us"><b>About Us</b></a><br/>
+                            </div>
+                            
+                        </lightning-layout-item>
+                    </lightning-layout>
+                    <span></span> 
+                    
+                </lightning-layout-item>
+                <lightning-layout-item size="12" small-device-size="6" medium-device-size="6" large-device-size="4">
+                    <h1 class="myResourcesCardTitles footerSelectedTitlePadding directMeto" style="">Direct me to</h1>
+                    <div class="slds-list_dotted myResourcesCardContent" style="">
+                        <a target="_blank" href="https://www.reva.edu.in/">REVA University</a><br/>
+                        <a target="_blank" href="https://alumni.reva.edu.in/">REVA Alumni</a><br/>
+                        <a target="_blank" href="https://www.revanest.com/">REVA NEST</a><br/>
+                        <a target="_blank" href="https://race.reva.edu.in/">RACE</a>
+                    </div>
+                </lightning-layout-item>
+            </lightning-layout>
+           
+        </lightning-layout-item>
+
+        <lightning-layout-item class="slds-p-around_small" size="12" small-device-size="12" medium-device-size="6" large-device-size="6" >
+            <h1 class="myResourcesCardTitles  " style="text-align: center;">Alumni Conversations</h1>
+            <c-alu-footer-carousal ></c-alu-footer-carousal>
+           
+        </lightning-layout-item>
+
+        <!-- <lightning-layout-item class="slds-p-top_small slds-p-horizontal_large slds-p-bottom_small" size="12" small-device-size="6" medium-device-size="6" large-device-size="4" >
+           
+            <lightning-layout multiple-rows>
+                <lightning-layout-item class="slds-p-bottom_small slds-p-right_small" size="12" small-device-size="6" medium-device-size="6" large-device-size="6">
+                    <h1 class="myResourcesCardTitles footerSelectedTitlePadding" style="">Social Activity</h1>
+                    <div class="slds-list_dotted myResourcesCardContent" style="">
+                        <a target="_blank" href="https://alumni.reva.edu.in/scholarships">Scholarships</a><br/>
+                        <a target="_blank" href="https://alumni.reva.edu.in/best-project-awards">Best Project awards</a><br/>
+                        <a target="_blank" href="https://alumni.reva.edu.in/student-project-funding">Student Project Funding</a><br/>
+                       <a target="_blank" href="https://alumni.reva.edu.in/alumni-association-endowment-gold-medal-for-best-outgoing-student">Alumni Association Endowment gold Medal for best outgoing student</a>
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item size="12" small-device-size="6" medium-device-size="6" large-device-size="6">
+                    <h1 class="myResourcesCardTitles footerSelectedTitlePadding" style="">Alumni Assist</h1>
+                    <div class="slds-list_dotted myResourcesCardContent" style="">
+                   <a target="_blank" href="https://alumni.reva.edu.in/alumni-book-bank">Alumni Book Bank</a><br/>
+                        <a target="_blank" href="https://alumni.reva.edu.in/volunteering">Volunteering</a><br/>
+                        <a target="_blank" href="https://alumni.reva.edu.in/abhivriddhi">Abhivriddhi</a><br/>
+                        <a target="_blank" href="https://alumni.reva.edu.in/health-care">Health care</a><br/>
+                        <a target="_blank" href="https://alumni.reva.edu.in/contribution-donation">Contribution/Donation</a></li>
+                    </div>
+                </lightning-layout-item>
+            </lightning-layout>
+        </lightning-layout-item> -->
+
+       
+
+        <lightning-layout-item class="stay_connected_footer" size="12" small-device-size="12" medium-device-size="12" large-device-size="12" padding="around-medium" >
+            <h2 class="slds-align_absolute-center">Stay Connected</h2>
+
+            <span class="textAlign slds-align_absolute-center slds-m-bottom_small" style="color: rgb(233, 228, 228);">There’s no better way to stay updated about REVA University or the lives of REVA Family</span>
+
+           
+
+            <!-- new change start 28th Feb, 2024 -->
+            <lightning-layout multiple-rows>
+                <lightning-layout-item size="12" small-device-size="12" medium-device-size="2" large-device-size="2" padding="horizontal-small">
+                </lightning-layout-item>
+
+                <lightning-layout-item size="12" small-device-size="12" medium-device-size="8" large-device-size="8" padding="horizontal-small">
+                    <lightning-layout multiple-rows>
+                        <lightning-layout-item size="12" small-device-size="4" medium-device-size="4" large-device-size="4" padding="horizontal-small">
+                            <div class="stay_connected_footer_contact_info slds-align_absolute-center">Address</div>
+                            <div class="contactDetails slds-align_absolute-center">Rukmini Knowledge Park, Kattingenahalli </div>
+                            <div class="contactDetails slds-align_absolute-center"> Yelahanka, Bangalore 560064</div>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="12" small-device-size="4" medium-device-size="4" large-device-size="4" padding="horizontal-small">
+                            <div class="stay_connected_footer_contact_info slds-align_absolute-center">Call at</div>
+                            <div class="contactDetails slds-align_absolute-center">+91-90211 90211 / 080-46966966</div>
+                        </lightning-layout-item>
+                        <lightning-layout-item  size="12" small-device-size="4" medium-device-size="4" large-device-size="4" padding="horizontal-small">
+                            <div class="stay_connected_footer_contact_info slds-align_absolute-center">Inbox</div>
+                            <div class="contactDetails slds-align_absolute-center">alumni@reva.edu.in</div>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                </lightning-layout-item>
+
+                <lightning-layout-item class="slds-m-bottom_small" size="12" small-device-size="12" medium-device-size="2" large-device-size="2" padding="horizontal-small">
+                </lightning-layout-item>
+            </lightning-layout>
+
+            
+             <!-- new change end -->
+             <p class="slds-align_absolute-center"><small>Connect with us on</small></p>
+            <lightning-layout multiple-rows>
+            <lightning-layout-item class="slds-p-top_medium"  size="12" small-device-size="12" medium-device-size="12" large-device-size="12" padding="horizontal-small">
+              
+                <span style="" class="iconsAlignment">
+                <span class="icons">
+                    <a target="_blank" href="https://www.facebook.com/RevaUniversityAlumni">
+                        <img  class="fbIcon" src={fbIcon}>
+                    </a>
+                </span>
+
+                <span class="icons">
+                    <a target="_blank" href="https://twitter.com/REVAUniversity">
+                        <img  class="twitterIcon" src={twitterIcon}>
+                    </a>
+                </span>
+
+                <span class="icons">
+                    <a target="_blank" href="https://www.instagram.com/revaalumniassociationofficial">
+                        <img  class="instaIcon" src={instaIcon}>
+                   </a>
+                </span>
+
+                <span class="icons">
+                    <a target="_blank" href="https://www.linkedin.com/in/reva-university-alumni-cell-9a2a86133/">
+                        <img  class="linkedInIcon" src={linkedInIcon}>
+                    </a>
+                </span>
+
+                <span class="icons">
+                    <a target="_blank" href="https://www.youtube.com/@revauniversity_official">
+                        <img  class="yotubeIcon" src={youtubeIcon}>
+                    </a>
+                </span>
+            </span>
+
+            </lightning-layout-item>
+        </lightning-layout>   
+        
+
+        </lightning-layout-item>
+
+      
+
+</lightning-layout>
+    
+</template>

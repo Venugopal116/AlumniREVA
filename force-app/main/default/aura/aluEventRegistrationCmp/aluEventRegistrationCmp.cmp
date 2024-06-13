@@ -1,0 +1,48 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global">
+
+<aura:attribute name="isRegisterEvent" type="boolean" default="true" />
+<aura:attribute name="isRecentlyRegistered" type="boolean" default="true" />
+<!-- <aura:attribute name="isClosedCases" type="boolean" default="true" /> -->
+
+
+<div style="box-shadow: 2px 4px 9px -4px #6e6e6e; border: 1px solid #f57f26; padding: 5px; border-radius: 10px;">
+     
+            <!-- <div class="slds-float_right payMultiple"> </div> -->
+            <lightning:tabset selectedTabId="registerEvent" class="tab-active ltng-tabset" variant="scoped">
+
+                <lightning:tab label="REGISTER FOR AN EVENT" id="registerForAnEvent">
+                    <!-- <aura:if isTrue="{!v.isRegisterEvent}"> -->
+                       
+                       <c:ALU_EventRegistrationCmp/>
+                    <!-- </aura:if>  -->
+                </lightning:tab>
+
+                <lightning:tab label="RECENTLY REGISTERED" id="recentlyRegistered">
+                    <aura:if isTrue="{!v.isRecentlyRegistered}">
+                        <!-- AluEventsRegistered -->
+                        <!-- <c:openCasesAlu></c:openCasesAlu> -->
+                        <c:aluEventsRegistered></c:aluEventsRegistered>
+                        <aura:set attribute="else">
+                            <div style="text-align:center;color:red;">
+                                No Records to Display
+                            </div>
+                        </aura:set>
+                    </aura:if> 
+                </lightning:tab>
+
+                <!-- <lightning:tab class="tabColor" label="Closed Cases" id="ClosedCases">
+                   <aura:if isTrue="{!v.isClosedCases}">
+                    <c:closedCasesScreenAlu></c:closedCasesScreenAlu>
+                        <aura:set attribute="else">
+                            <div style="text-align:center;color:red;">
+                                No Records to Display
+                            </div>
+                        </aura:set>
+                    </aura:if> 
+                </lightning:tab> -->
+            </lightning:tabset>
+
+      
+        </div>
+
+</aura:component>

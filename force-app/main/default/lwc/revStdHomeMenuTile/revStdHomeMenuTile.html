@@ -1,0 +1,42 @@
+<!--
+    ## Author
+    ! Owais Amin Ahanger
+     Usage
+    Experience Builder >> Student Portal >> Home Page
+-->
+
+<template>
+
+	<template lwc:if={menuList}>
+
+		<div class="tile-container">
+			<template for:each={menuList} for:item="menuItem" for:index="index">
+
+				<template lwc:if={menuItem.isVisible}>
+					<div class="parent-tile" key={menuItem.Id}>
+						<div class="heading-tile">
+							<span><b>{menuItem.headingName}</b></span>
+
+							<span class="heading-tile-icon">
+								<img src={menuItem.imageUrl} alt={menuItem.Id} />
+							</span>
+						</div>
+						<div class="body-tile">
+							<span class="body-tile-item">{menuItem.body.item1.headingText}
+								<br><b>{menuItem.body.item1.headingValue}</b></span>
+							<span class="body-tile-item">{menuItem.body.item2.headingText}
+								<br><b>{menuItem.body.item2.headingValue}</b></span>
+							<span class="body-tile-item">{menuItem.body.item3.headingText}
+								<br><b>{menuItem.body.item3.headingValue}</b></span>
+						</div>
+						<div class="footer-tile">
+							<a href={menuItem.url}>Know More</a>
+						</div>
+					</div>
+				</template>
+
+
+			</template>
+		</div>
+	</template>
+</template>

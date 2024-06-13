@@ -1,0 +1,181 @@
+<aura:component controller="ALU_SummaryRollUpCmp_Ctrl" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global">
+  <aura:handler name="init" value="{!this}" action="{!c.loadData}" />
+  <aura:attribute name="wrapperList" type="object" />
+  <lightning:layout multipleRows="true">
+    <lightning:layoutItem class="tileContainer" size="12" smallDeviceSize="12" mediumDeviceSize="12" largeDeviceSize="12">
+      <!-- Row 1 -->
+      <lightning:layout multipleRows="true">
+        <lightning:layoutItem class="topTileCss" size="12" smallDeviceSize="12" mediumDeviceSize="6" largeDeviceSize="6" padding="around-small">
+        <lightning:navigation aura:id="navService" />
+         <div data-pagename="" style="cursor: pointer;" onclick="{!c.navigateToCommPage}">
+          <lightning:layout class="tileBox alumniConnectedBox" multipleRows="true">
+            <lightning:layoutItem class="slds-text-align_center iconArea" size="12" smallDeviceSize="4" mediumDeviceSize="4" largeDeviceSize="4" padding="around-small">
+              <!-- Icon here -->
+              <img class="alumiConnectedIcon" src="{!$Resource.ALU_OverviewCmp_Icons + '/alumniConnected.png'}" />
+              <!-- <lightning:icon iconName='utility:buyer_group_qualifier' alternativeText='add_contact' size='large' title='Total Alumni Connected'></lightning:icon> -->
+            </lightning:layoutItem>
+            <lightning:layoutItem size="12" smallDeviceSize="8" mediumDeviceSize="8" largeDeviceSize="8">
+              <lightning:layout multipleRows="true">
+                <lightning:layoutItem class="innerBox" size="12" smallDeviceSize="12" mediumDeviceSize="12" largeDeviceSize="12" padding="around-small">
+                  <!-- count -->
+                  <!-- <lightning:navigation aura:id="navService" /> -->
+                  <h1  class="slds-text-heading_large slds-text-align_center">{!v.wrapperList.userCount}</h1>
+                </lightning:layoutItem>
+                <lightning:layoutItem class="innerBox slds-text-align_center" size="12" smallDeviceSize="12" mediumDeviceSize="12" largeDeviceSize="12" padding="around-small">
+                  <!-- title -->
+                  <b class=" ">Alumni Connected</b>
+                </lightning:layoutItem>
+              </lightning:layout>
+            </lightning:layoutItem>
+          </lightning:layout>
+         </div>
+        </lightning:layoutItem>
+
+        <lightning:layoutItem class="topTileCss" size="6" smallDeviceSize="6" mediumDeviceSize="3" largeDeviceSize="3" padding="around-small">
+         <div data-pagename="Achievements__c" style="cursor: pointer;" onclick="{!c.navigateToCommPage}">
+          <lightning:layout class="tileBox achiversBox" multipleRows="true">
+            <lightning:layoutItem class="slds-text-align_center iconArea" size="12" smallDeviceSize="4" mediumDeviceSize="4" largeDeviceSize="4" padding="around-small">
+              <!-- Icon here -->
+              <img class="achieversIcon"  src="{!$Resource.ALU_OverviewCmp_Icons + '/achievers.png'}" /> 
+              <!-- <lightning:icon iconName='utility:buyer_group_qualifier' alternativeText='Alumini Connected' size='large' title='Total Alumni Connected'></lightning:icon> -->
+            </lightning:layoutItem>
+            <lightning:layoutItem size="12" smallDeviceSize="8" mediumDeviceSize="8" largeDeviceSize="8">
+              <lightning:layout multipleRows="true">
+                <lightning:layoutItem class="innerBox" size="12" smallDeviceSize="12" mediumDeviceSize="12" largeDeviceSize="12" padding="around-small">
+                  <!-- count -->
+                  <H1 class="slds-text-heading_large slds-text-align_center">{!v.wrapperList.totalAchievers}</H1>
+                </lightning:layoutItem>
+                <lightning:layoutItem class="innerBox slds-text-align_center" size="12" smallDeviceSize="12" mediumDeviceSize="12" largeDeviceSize="12" padding="around-small">
+                  <!-- title -->
+                  <b class=" ">Achivers</b>
+                </lightning:layoutItem>
+              </lightning:layout>
+            </lightning:layoutItem>
+          </lightning:layout>
+          </div>
+        </lightning:layoutItem>
+
+        <lightning:layoutItem class="topTileCss" size="6" smallDeviceSize="6" mediumDeviceSize="3" largeDeviceSize="3" padding="around-small">
+         <div data-pagename="JobPosting__c" style="cursor: pointer;" onclick="{!c.navigateToCommPage}">
+          <lightning:layout class="tileBox jobOpeningsBox" multipleRows="true">
+            <lightning:layoutItem class="slds-text-align_center iconArea" size="12" smallDeviceSize="4" mediumDeviceSize="4" largeDeviceSize="4" padding="around-small">
+              <!-- Icon here -->
+              <img class="alumiConnectedIcon" src="{!$Resource.ALU_OverviewCmp_Icons + '/jobOpenings.png'}" />
+              <!-- <lightning:icon iconName='utility:buyer_group_qualifier' alternativeText='add_contact' size='large' title='Total Alumni Connected'></lightning:icon> -->
+            </lightning:layoutItem>
+            <lightning:layoutItem size="12" smallDeviceSize="8" mediumDeviceSize="8" largeDeviceSize="8">
+              <lightning:layout multipleRows="true">
+                <lightning:layoutItem class="innerBox" size="12" smallDeviceSize="12" mediumDeviceSize="12" largeDeviceSize="12" padding="around-small">
+                  <!-- count -->
+                  <H1 class="slds-text-heading_large slds-text-align_center">{!v.wrapperList.totalJobOpenings}</H1>
+                </lightning:layoutItem>
+                <lightning:layoutItem class="innerBox slds-text-align_center" size="12" smallDeviceSize="12" mediumDeviceSize="12" largeDeviceSize="12" padding="around-small">
+                  <!-- title -->
+                  <b class=" ">Job Openings</b>
+                </lightning:layoutItem>
+              </lightning:layout>
+            </lightning:layoutItem>
+          </lightning:layout>
+         </div>
+        </lightning:layoutItem>
+
+        <lightning:layoutItem class="topTileCss" size="6" smallDeviceSize="6" mediumDeviceSize="3" largeDeviceSize="3" padding="around-small">
+         <div data-pagename="JobSeeking__c" style="cursor: pointer;" onclick="{!c.navigateToCommPage}"> 
+          <lightning:layout class="tileBox jobRequirementsBox" multipleRows="true">
+            <lightning:layoutItem class="slds-text-align_center iconArea" size="12" smallDeviceSize="4" mediumDeviceSize="4" largeDeviceSize="4" padding="around-small">
+              <!-- Icon here -->
+              <img class="jobRequirementsIcon" src="{!$Resource.ALU_OverviewCmp_Icons + '/jobReq.png'}" />
+              <!-- <lightning:icon iconName='utility:buyer_group_qualifier' alternativeText='add_contact' size='large' title='Total Alumni Connected'></lightning:icon> -->
+            </lightning:layoutItem>
+            <lightning:layoutItem size="12" smallDeviceSize="8" mediumDeviceSize="8" largeDeviceSize="8">
+              <lightning:layout multipleRows="true">
+                <lightning:layoutItem class="innerBox" size="12" smallDeviceSize="12" mediumDeviceSize="12" largeDeviceSize="12" padding="around-small">
+                  <!-- count -->
+                  <H1 class="slds-text-heading_large slds-text-align_center">{!v.wrapperList.totalJobRequirements}</H1>
+                </lightning:layoutItem>
+                <lightning:layoutItem class="innerBox slds-text-align_center" size="12" smallDeviceSize="12" mediumDeviceSize="12" largeDeviceSize="12" padding="around-small">
+                  <!-- title -->
+                  <b class=" ">Job Requirements</b>
+                </lightning:layoutItem>
+              </lightning:layout>
+            </lightning:layoutItem>
+          </lightning:layout>
+         </div>
+        </lightning:layoutItem>
+
+        <lightning:layoutItem class="topTileCss" size="6" smallDeviceSize="6" mediumDeviceSize="3" largeDeviceSize="3" padding="around-small">
+         <div data-pagename="EventRegistration__c" style="cursor: pointer;" onclick="{!c.navigateToCommPage}">
+          <lightning:layout class="tileBox liveEventsBox" multipleRows="true">
+            <lightning:layoutItem class="slds-text-align_center iconArea" size="12" smallDeviceSize="4" mediumDeviceSize="4" largeDeviceSize="4" padding="around-small">
+              <!-- Icon here -->
+              <img class="liveEventsIcon" src="{!$Resource.ALU_OverviewCmp_Icons + '/liveEvents.png'}" />
+              <!-- <lightning:icon iconName='utility:buyer_group_qualifier' alternativeText='add_contact' size='large' title='Total Alumni Connected'></lightning:icon> -->
+            </lightning:layoutItem>
+            <lightning:layoutItem size="12" smallDeviceSize="8" mediumDeviceSize="8" largeDeviceSize="8">
+              <lightning:layout multipleRows="true">
+                <lightning:layoutItem class="innerBox" size="12" smallDeviceSize="12" mediumDeviceSize="12" largeDeviceSize="12" padding="around-small">
+                  <!-- count -->
+                  <H1 class="slds-text-heading_large slds-text-align_center">{!v.wrapperList.totalFutureEvents}</H1>
+                </lightning:layoutItem>
+                <lightning:layoutItem class="innerBox slds-text-align_center" size="12" smallDeviceSize="12" mediumDeviceSize="12" largeDeviceSize="12" padding="around-small">
+                  <!-- title -->
+                  <b class=" ">Live Events</b>
+                </lightning:layoutItem>
+              </lightning:layout>
+            </lightning:layoutItem>
+          </lightning:layout>
+         </div>
+        </lightning:layoutItem>
+
+        <lightning:layoutItem class="topTileCss" size="6" smallDeviceSize="6" mediumDeviceSize="3" largeDeviceSize="3" padding="around-small">
+         <div data-pagename="EventRegistration__c" style="cursor: pointer;" onclick="{!c.navigateToCommPage}">
+          <lightning:layout class="tileBox todayEventsBox" multipleRows="true">
+            <lightning:layoutItem class="slds-text-align_center iconArea" size="12" smallDeviceSize="4" mediumDeviceSize="4" largeDeviceSize="4" padding="around-small">
+              <!-- Icon here -->
+              <img class="todayEventsIcon" src="{!$Resource.ALU_OverviewCmp_Icons + '/todaysEvents.png'}" />
+              <!-- <lightning:icon iconName='utility:buyer_group_qualifier' alternativeText='add_contact' size='large' title='Total Alumni Connected'></lightning:icon> -->
+            </lightning:layoutItem>
+            <lightning:layoutItem size="12" smallDeviceSize="8" mediumDeviceSize="8" largeDeviceSize="8">
+              <lightning:layout multipleRows="true">
+                <lightning:layoutItem class="innerBox" size="12" smallDeviceSize="12" mediumDeviceSize="12" largeDeviceSize="12" padding="around-small">
+                  <!-- count -->
+                  <H1 class="slds-text-heading_large slds-text-align_center">{!v.wrapperList.totalLiveEvents}</H1>
+                </lightning:layoutItem>
+                <lightning:layoutItem class="innerBox slds-text-align_center" size="12" smallDeviceSize="12" mediumDeviceSize="12" largeDeviceSize="12" padding="around-small">
+                  <!-- title -->
+                  <b class=" ">Today's Events</b>
+                </lightning:layoutItem>
+              </lightning:layout>
+            </lightning:layoutItem>
+          </lightning:layout>
+         </div>
+        </lightning:layoutItem>
+
+        <lightning:layoutItem class="topTileCss" size="6" smallDeviceSize="6" mediumDeviceSize="3" largeDeviceSize="3" padding="around-small">
+         <div data-pagename="" style="cursor: pointer;" onclick="{!c.navigateToCommPage}"> 
+          <lightning:layout class="tileBox activitiesBox" multipleRows="true">
+            <lightning:layoutItem class="slds-text-align_center iconArea" size="12" smallDeviceSize="4" mediumDeviceSize="4" largeDeviceSize="4" padding="around-small">
+              <!-- Icon here -->
+              <!-- <img style="width:50%; height:auto;" src="{!$Resource.ALU_OverviewCmp_Icons + '/activities.png'}" />  -->
+              <lightning:icon iconName='utility:activity' alternativeText='add_contact' size='large' title='Total Alumni Connected'></lightning:icon>
+            </lightning:layoutItem>
+            <lightning:layoutItem size="12" smallDeviceSize="8" mediumDeviceSize="8" largeDeviceSize="8">
+              <lightning:layout multipleRows="true">
+                <lightning:layoutItem class="innerBox" size="12" smallDeviceSize="12" mediumDeviceSize="12" largeDeviceSize="12" padding="around-small">
+                  <!-- count -->
+                  <H1 class="slds-text-heading_large slds-text-align_center">{!v.wrapperList.totalActivities}</H1>
+                </lightning:layoutItem>
+                <lightning:layoutItem class="innerBox slds-text-align_center" size="12" smallDeviceSize="12" mediumDeviceSize="12" largeDeviceSize="12" padding="around-small">
+                  <!-- title -->
+                  <b class=" ">Activities</b>
+                </lightning:layoutItem>
+              </lightning:layout>
+            </lightning:layoutItem>
+          </lightning:layout>
+         </div>
+        </lightning:layoutItem>
+
+      </lightning:layout>
+    </lightning:layoutItem>
+  </lightning:layout>
+</aura:component>

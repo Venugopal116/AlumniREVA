@@ -1,0 +1,66 @@
+.THIS.side-menu-wrapper {
+    display: flex;
+    gap: 0.3125rem;
+    margin-bottom: 3.75rem;
+}
+
+.THIS.side-menu-wrapper .side-menu-btn-icons-container {
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.9375rem;
+}
+
+.THIS.side-menu-wrapper .side-menu-tabs-container {
+    flex-grow: 1;
+    height: 100%;
+    display: flex;
+    gap: 1.25rem;
+    flex-direction: column;
+}
+
+
+
+.THIS .main-menu-btn img {
+    max-width: 2.1875rem;
+    height: 2.1875rem;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+.THIS .sub-menu-btns {
+    min-width: 30px;
+}
+
+.THIS .sub-menu-btns img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+.THIS.side-menu-wrapper .side-menu-btn-icons-container .sub-menu-btn-container {
+    padding: 0rem 0.625rem;
+    width: fit-content;
+}
+
+.THIS .btn-active {
+    border-right: 0.1875rem solid var(--reva-brand-color);
+    border-left: 0.1875rem solid var(--reva-brand-color);
+    border-radius: 0.3125rem;
+}
+
+.THIS .menu-active {
+    border-top: 0.3125rem solid var(--reva-brand-color);
+    border-radius: 0.3125rem;
+    width: fit-content;
+    padding: 0.3125rem 0.9375rem 0 0.9375rem;
+
+}
+
+.THIS .menu-not-active {
+    padding: 0.3125rem 0.625rem;
+    background-color: var(--reva-brand-color);
+    border-radius: 0.3125rem;
+    width: fit-content;
+}

@@ -1,0 +1,103 @@
+<template>
+	<template lwc:if={showMainMenuSection}>
+	  <div class="main-menu-container">
+		<div class="main-menu user-icon">
+		  <img src={profilePicUrl} alt="User Icon" style="border-radius: 0.5rem;" />
+		</div>
+		<div class="main-menu-info">
+		  <span class="main-menu-info-heading">
+			<b>Welcome!</b>&nbsp; {name} </span>
+		  <br>
+		  <span class="main-menu-info-sub-heading">{currentDate}</span>
+		</div>
+		<div class="menu-btn" onclick={handleProfileSection}>
+		  <img src={showButtonIconUrl} alt="Show Button Icon" />
+		</div>
+	  </div>
+	</template>
+	<template lwc:if={showProfileSection}>
+	  <div class="profile-menu-section-wrapper">
+		<div class="profile-menu-section-btn">
+		  <span class="profile-menu-section-heading"> My Profile </span>
+		  <span onclick={handleMenuSection} class="menu-btn">
+			<img src={hideButtonIconUrl} alt="Close Button Icon">
+		  </span>
+		</div>
+		<div class="profile-menu-section-container">
+		  <div class="my-profile-section profile-menu-section ">
+			<div class="my-name-section">
+			  <span class="user-icon">
+				<img src={profilePicUrl} style="border-radius: 2rem; height: 4.5rem;width: 4.5rem;object-fit: contain;" alt="User Icon">
+			  </span>
+			  <!-- <span><b>{name}</b></span> -->
+			  <div>
+				<b>{name}</b>
+			  </div>
+			</div>
+			<br>
+			<div class="my-address-section">
+			  <div>
+				<b>Address : </b>
+			  </div>
+			  <div>{mailingStreet},</div>
+			  <div>{mailingCity}</div>
+			  <div>Pin:&nbsp;{mailingPostalCode} &nbsp;{mailingState},{mailingCountry}</div>
+			</div>
+		  </div>
+		  <!-- <div class="gender-section profile-menu-section"><div><span class="profile-menu-section-heading">SRN Number</span><br><span class="profile-menu-section-content">{srnNumber}</span></div><div><span class="profile-menu-section-heading">Gender</span><br><span class="profile-menu-section-content">{gender}</span></div><div><span class="profile-menu-section-heading">Country Code</span><br><span class="profile-menu-section-content">{countryCode}</span></div><div><span class="profile-menu-section-heading">Contact Details</span><br><span class="profile-menu-section-content">{mobilePhone}</span></div></div> -->
+		  <div class="course-section profile-menu-section">
+			<div>
+			  <span class="profile-menu-section-heading">Mobile No.</span>
+			  <br>
+			  <span class="profile-menu-section-content">{mobilePhone}</span>
+			  <!--  -->
+			</div>
+			<div>
+			  <span class="profile-menu-section-heading"> Email ID</span>
+			  <br>
+			  <span class="profile-menu-section-content">{personalEmail}</span>
+			</div>
+			<div>
+			  <span class="profile-menu-section-heading">Blood Group</span>
+			  <br>
+			  <span class="profile-menu-section-content"> {bloodGroup}</span>
+			</div>
+		  </div>
+		  <div class="nationality-section profile-menu-section">
+			<div>
+			  <span class="profile-menu-section-heading">Gender</span>
+			  <br>
+			  <span class="profile-menu-section-content">{gender}</span>
+			</div>
+			<div>
+			  <span class="profile-menu-section-heading">Marital Status</span>
+			  <br>
+			  <span class="profile-menu-section-content">{maritalStatus}</span>
+			</div>
+			<div>
+			  <span class="profile-menu-section-heading"> Date of Birth</span>
+			  <br>
+			  <span class="profile-menu-section-content">{birthdate}</span>
+			</div>
+		  </div>
+		  <div class="dob-section profile-menu-section">
+			<div>
+			  <span class="profile-menu-section-heading">SRN Number</span>
+			  <br>
+			  <span class="profile-menu-section-content">{srnNumber}</span>
+			</div>
+			<div>
+			  <span class="profile-menu-section-heading">Program</span>
+			  <br>
+			  <span class="profile-menu-section-content">{program}</span>
+			</div>
+			<div>
+			  <span class="profile-menu-section-heading">Year of Passing</span>
+			  <br>
+			  <span class="profile-menu-section-content">{graduationYear}</span>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</template>
+  </template>

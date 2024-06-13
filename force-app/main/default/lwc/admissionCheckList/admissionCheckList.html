@@ -1,0 +1,75 @@
+<template>
+    <lightning-card title="Admission Checklist">
+        <lightning-layout>
+            <lightning-layout-item padding="horizontal-medium">
+                <template if:true={additionalDocumentsRequired}>
+                    <lightning-icon icon-name="action:approval" size="xx-small"></lightning-icon>
+                </template>
+                <template if:false={additionalDocumentsRequired}>
+                    <lightning-icon icon-name="action:close" size="xx-small"></lightning-icon>
+                </template>
+                <label> Additional Documents Required</label>
+                <p></p></br>
+
+                <template if:true={feeStructureDefined}>
+                    <lightning-icon icon-name="action:approval" size="xx-small"></lightning-icon>
+                </template>
+                <template if:false={feeStructureDefined}>
+                    <lightning-icon icon-name="action:close" size="xx-small"></lightning-icon>
+                </template>
+                <label> Fee Structure Defined</label>
+
+                <p></p></br>
+                <template if:true={concessionStat}>
+                    <lightning-icon icon-name="action:approval" size="xx-small"></lightning-icon>
+                </template>
+                <template if:false={concessionStat}>
+                    <lightning-icon icon-name="action:close" size="xx-small"></lightning-icon>
+                </template>
+                <label> Concession Status : {concessionStatus}</label>
+                <p></p> </br>
+                <template if:true={sclStatus}>
+                    <lightning-icon icon-name="action:approval" size="xx-small"></lightning-icon>
+                </template>
+                <template if:false={sclStatus}>
+                    <lightning-icon icon-name="action:close" size="xx-small"></lightning-icon>
+                </template>
+                <label> Scholarship Applied</label>
+                <p></p> </br>
+                <template if:true={provAdmissionFee}>
+                    <lightning-icon icon-name="action:approval" size="xx-small"></lightning-icon>
+                </template>
+                <template if:false={provAdmissionFee}>
+                    <lightning-icon icon-name="action:close" size="xx-small"></lightning-icon>
+                </template>
+                <label> Provisional Admission Fee Paid</label>
+                <p></p> <br>
+            </lightning-layout-item>
+            <!-- <lightning-layout-item padding="horizontal-medium">  -->
+                <!--<template if:true={declaration}>
+                    <lightning-icon icon-name="action:approval" size="xx-small"></lightning-icon>
+                </template>
+                 <template if:false={declaration}>
+                    <lightning-icon icon-name="action:close" size="xx-small"></lightning-icon>
+                </template>
+                <label> Declaration</label>
+                <p></p> <br>
+                <template if:true={poSignedByApplicant}>
+                    <lightning-icon icon-name="action:approval" size="xx-small"></lightning-icon>
+                </template>
+                <template if:false={poSignedByApplicant}>
+                    <lightning-icon icon-name="action:close" size="xx-small"></lightning-icon>
+                </template>
+                <label> PO Signed By Applicant</label>
+                <p></p> <br>
+                <template if:true={poFullySigned}>
+                    <lightning-icon icon-name="action:approval" size="xx-small"></lightning-icon>
+                </template>
+                <template if:false={poFullySigned}>
+                    <lightning-icon icon-name="action:close" size="xx-small"></lightning-icon>
+                </template>
+                <label> PO Fully Signed</label> -->
+            <!-- </lightning-layout-item> -->
+        </lightning-layout>
+    </lightning-card>
+</template>

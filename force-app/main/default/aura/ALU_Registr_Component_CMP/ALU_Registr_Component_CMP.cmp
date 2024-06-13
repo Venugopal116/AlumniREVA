@@ -1,0 +1,226 @@
+<aura:component controller="ALU_Registr_Component_CMP_Ctrlr" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global">
+ <lightning:notificationsLibrary aura:id="notifLib"/>
+    <aura:attribute name="errorMessages" type="List" />
+    <aura:attribute name="showError" type="Boolean" default="false" />
+    <aura:attribute name="genderOptions" type="List" default="[]" />
+    <aura:attribute name="bloodGroupOptions" type="List" default="[]" />
+    <aura:attribute name="coursePursuedOptions" type="List" default="[]" />
+    <aura:attribute name="maritalStatusOptions" type="List" default="[]" />
+    <aura:attribute name="Name" type="string"  />
+    <aura:attribute name="Email" type="string"  />
+    <aura:attribute name="Mobile" type="string"  />
+    <aura:attribute name="phoneNumber" type="string"  />
+    <aura:attribute name="Dob" type="Date"  />
+    <aura:attribute name="genderVal" type="string"  />
+    <aura:attribute name="bgVal" type="string"  />
+    <aura:attribute name="ProgramVal" type="string"  />
+    <aura:attribute name="yrofGrad" type="Decimal"  />
+    <aura:attribute name="marStatus" type="string"  />
+    <aura:attribute name="SRNNumber" type="string"  />
+    <aura:attribute name="selectedCountryCode" type="string"  />
+    <aura:attribute name="selectedGraduationYear" type="string"  />
+    
+    <aura:attribute name="countryCodes" type="List" />
+    <aura:attribute name="programs" type="List" />
+    <aura:attribute name="courseOptions" type="List" />
+    <aura:attribute name="graduationYears" type="String[]" /> 
+       <aura:attribute name="maxAllowedDate" type="Date" /> 
+    
+    <aura:attribute name="message" type="String"/>
+    <aura:attribute name="isError" type="Boolean" default="false"/>
+      <aura:attribute name="formsubimitted" type="Boolean" default="false"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />    
+    
+    
+    
+    
+    <aura:if isTrue="{!v.formsubimitted == true}">
+                    <br/><br/><br/><br/>
+                    <center><span style="color:green;font-size:20px;"><b>Thank you for Registering, the confirmation will be sent to you shortly!</b></span></center>
+                </aura:if>
+    <aura:if isTrue="{!v.formsubimitted == false}">
+    <div  class="bg-gradient slds-grid slds-wrap  slds-grid--align-center" >
+        <!-- style="{! 'background-image: url(\'' + $Resource.ALU_BackgroundImage + '\');' }" -->
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_8-of-12 slds-large-size_6-of-12">
+              
+            <lightning:card >
+             <div class="slds-p-around_medium">
+              <!--  <img src="/resource/REVA_LOGO" class="slds-align_absolute-center" />-->
+                <!-- <img src="{!$Resource.REVA_LOGO}" class="slds-align_absolute-center"/> -->
+              <!--  <img src="https://revaeduin.s3.ap-south-1.amazonaws.com/uploads/images/1636545030_eb8e424b8c32ef9fc017.png" class="slds-align_absolute-center" />-->
+                <h1 class="slds-text-heading_medium slds-align_absolute-center"><b>Alumni Registration Form</b></h1>
+                <br/>
+                <!-- Display error message if there is one -->
+                  
+                 <aura:if isTrue="{!v.isError}">
+                        <div class="slds-notify slds-notify_alert slds-theme_error" role="alert">
+                            <h2 class="slds-text-heading_small">{!v.message}</h2>
+                        </div>
+                    </aura:if>
+                <!-- Display success message if there is one -->
+                  <aura:if isTrue="{!not(v.isError)  &amp;&amp;  v.message.length > 0}">
+                        <div class="slds-notify slds-notify_alert slds-theme_success" role="alert">
+                             <h2 class="slds-text-heading_small">{!v.message}</h2>
+                          
+                        </div>
+                    </aura:if>
+                <div class="slds-card__body">
+                    
+                    
+                    <lightning:layout multipleRows="true">
+                        <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="12" largeDeviceSize="12" padding="horizontal-small">
+                            <div class="slds-p-vertical_x-small">
+                                <h3 class=""><b>Personal Information</b></h3>
+                            </div>
+                        </lightning:layoutItem>
+                        <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="6" largeDeviceSize="6" padding="horizontal-small">
+                            <div class="custom-box slds-p-vertical_x-small">
+                                <div class="slds-form-element">
+                                    <label class="slds-form-element__label" for="text-input-id-47" style="color:black;">
+                                      <abbr class="slds-required" title="required">* </abbr>Name</label>
+                                    <div class="slds-form-element__control">
+                                      <input type="text" id="text-input-id-47" placeholder="Name" class="slds-input"  label="Name" name="name" value="{!v.Name}" required="true" style="--slds-c-input-color-background : #316d8e;  --slds-c-input-text-color : white; " />
+                                    </div>
+                                  </div>
+                            </div>
+                        </lightning:layoutItem>
+                        <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="6" largeDeviceSize="6" padding="horizontal-small">
+                            <div class="custom-box slds-p-vertical_x-small">
+                                <div class="slds-form-element">
+                                    <label class="slds-form-element__label" for="text-input-id-47" style="color:black;">
+                                      <abbr class="slds-required" title="required">* </abbr>Email</label>
+                                    <div class="slds-form-element__control">
+                                      <input id="text-input-id-48" label="Email" placeholder="Email" class="slds-input" name="email" value="{!v.Email}" required="true" type="email"  style="--slds-c-input-color-background : #316d8e;  --slds-c-input-text-color : white; " />
+                                    </div>
+                                  </div>
+                                <!-- <lightning:input aura:id="field" label="Email" name="email" value="{!v.Email}" required="true" type="email" /> -->
+                            </div>
+                        </lightning:layoutItem>
+                        <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="6" largeDeviceSize="6" padding="horizontal-small">
+                            <div class="custom-box slds-p-vertical_x-small">
+                                <lightning:select aura:id="field"  label="Country Code" value="{!v.selectedCountryCode}" required="true"  onchange="{!c.handleCountryCodeChange}" >
+                                                        
+                                                        <aura:iteration items="{!v.countryCodes}" var="option">
+                                                            <option value="{!option}">{!option}</option>
+                                                        </aura:iteration>
+                                </lightning:select>
+                            </div>
+                        </lightning:layoutItem>
+                        <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="6" largeDeviceSize="6" padding="horizontal-small">
+                            <div class="custom-box slds-p-vertical_x-small">
+                                
+                                    <div class="slds-form-element">
+                                        <label class="slds-form-element__label" for="text-input-id-47" style="color:black;">
+                                          <abbr class="slds-required" title="required">* </abbr>Mobile Number</label>   
+                                        <div class="slds-form-element__control">
+                                          <input class="slds-input"  type="tel" label="Mobile Numberr"  value="{!v.Mobile}" placeholder="Enter Mobile number" id="text-input-id-47" required="true" style=" --slds-c-input-text-color : white; " />
+                                        </div>
+                                      </div>
+                                
+                                <!-- <lightning:input aura:id="field" class="slds-input_mobile-number" type="tel" label="Mobile Number" required="true" value="{!v.Mobile}" placeholder="Enter Mobile number"/> -->
+                            </div>
+                        </lightning:layoutItem>
+                        <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="6" largeDeviceSize="6" padding="horizontal-small">
+                            <div class="custom-box slds-p-vertical_x-small">
+                                <lightning:select  aura:id="field" label="Gender" name="gender" value="{!v.genderVal}" required="true" onchange="{!c.handleGenderChange}">
+                                                    <option value="">--None--</option>
+                                                    <aura:iteration items="{!v.genderOptions}" var="option">
+                                                        <option value="{!option}">{!option}</option>
+                                                    </aura:iteration>
+                                </lightning:select>
+                            </div>
+                        </lightning:layoutItem>
+                        <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="6" largeDeviceSize="6" padding="horizontal-small">
+                            <div class="custom-box slds-p-vertical_x-small">
+                                <!-- <lightning:input aura:id="field" label="Date of Birth" placeholder="D.O.B" name="dob" value="{!v.Dob}" max="{!v.maxAllowedDate}" required="true" type="date" /> -->
+
+                                <div class="slds-form-element">
+                                    <label class="slds-form-element__label" for="text-input-id-47" style="color:black;">
+                                      <abbr class="slds-required" title="required">* </abbr>Date of Birth</label>   
+                                    <div class="slds-form-element__control">
+                                      <input class="slds-input"  type="date"  label="Date of Birth"  value="{!v.Dob}" placeholder="D.O.B" id="text-input-id-47" required="true" style=" --slds-c-input-text-color : white; " />
+                                    </div>
+                                  </div>
+                            </div>
+                        </lightning:layoutItem>
+                        <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="6" largeDeviceSize="6" padding="horizontal-small">
+                            <div class="custom-box slds-p-vertical_x-small">
+                                <lightning:select   aura:id="field"  label="Blood Group" name="bloodGroup" value="{!v.bgVal}" required="true" onchange="{!c.handleBloodGroupChange}">
+                                                    <option value="">--None--</option>
+                                                    <aura:iteration items="{!v.bloodGroupOptions}" var="option">
+                                                        <option value="{!option}">{!option}</option>
+                                                    </aura:iteration>
+                                </lightning:select>
+                            </div>
+                        </lightning:layoutItem>
+                        <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="6" largeDeviceSize="6" padding="horizontal-small">
+                            <div class="custom-box slds-p-vertical_x-small">
+                                <lightning:select   aura:id="field"  required="true" label="Marital Status" name="maritalStatus" value="{!v.marStatus}"  onchange="{!c.handleMaritalStatusChange}">
+                                                    <option value="">--None--</option>
+                                                    <aura:iteration items="{!v.maritalStatusOptions}" var="option">
+                                                        <option value="{!option}">{!option}</option>
+                                                    </aura:iteration>
+                                </lightning:select>
+                            </div>
+                        </lightning:layoutItem>
+                        <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="12" largeDeviceSize="12" padding="horizontal-small">
+                            <div class=" slds-p-vertical_x-small">
+                                <h3 class=""><b>Academic Information</b></h3>
+                            </div>
+                        </lightning:layoutItem>
+                        <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="6" largeDeviceSize="6" padding="horizontal-small">
+                            <div class="custom-box slds-p-vertical_x-small">
+                                <!-- <lightning:input aura:id="field" placeholder="SRN Number" label="SRN Number" type="text" name="name" value="{!v.SRNNumber}" required="true" /> -->
+
+                                <div class="slds-form-element">
+                                    <label class="slds-form-element__label" for="text-input-id-49" style="color:black;">
+                                      <abbr class="slds-required" title="required">* </abbr>SRN Number</label>   
+                                    <div class="slds-form-element__control">
+                                      <input class="slds-input"  type="text"  label="SRN Number"  value="{!v.SRNNumber}" placeholder="SRN Number" id="text-input-id-47" required="true" style=" --slds-c-input-text-color : white; " />
+                                    </div>
+                                  </div>
+
+                            </div>
+                        </lightning:layoutItem>
+                        <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="6" largeDeviceSize="6" padding="horizontal-small">
+                            <div class="custom-box slds-p-vertical_x-small">
+                                <lightning:select aura:id="field"  label="Program" name="Program" value="{!v.ProgramVal}" required="true" onchange="{!c.handlePpgramChange}">
+                                                    <option value="">--None--</option>
+                                                    <aura:iteration items="{!v.programs}" var="option">
+                                                        <option value="{!option}">{!option}</option>
+                                                    </aura:iteration>
+                                </lightning:select>
+                            </div>
+                        </lightning:layoutItem>
+                        <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="6" largeDeviceSize="6" padding="horizontal-small">
+                            <div class="custom-box slds-p-vertical_x-small">
+                                <lightning:select aura:id="field"  required="true"  label="Year of Graduation" value="{!v.selectedGraduationYear}">
+                                    <option value="">--None--</option>
+                                    <aura:iteration items="{!v.graduationYears}" var="year">
+                                        <option value="{!year}">{!year}</option>
+                                    </aura:iteration>
+                                </lightning:select>
+                            </div>
+                        </lightning:layoutItem>
+                        <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="6" largeDeviceSize="6" padding="horizontal-small">
+                            <div class="custom-box slds-p-vertical_x-small">
+                
+                            </div>
+                        </lightning:layoutItem>
+                        <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="12" largeDeviceSize="12" padding="horizontal-small">
+                            <div class="custom-box slds-p-vertical_x-small" style="float:right;"> 
+                                <!-- #3f2c31 -->
+                                <lightning:button  label="Register"  onclick="{!c.submitAlumniRegistration}"  class="slds-m-top_medium slds-button slds-button_brand custom-button"/>
+                            </div>
+                        </lightning:layoutItem>
+                    </lightning:layout>
+                    
+
+                </div>
+              
+            </div>   
+            </lightning:card>
+        </div>
+    </div>
+        </aura:if>
+</aura:component>

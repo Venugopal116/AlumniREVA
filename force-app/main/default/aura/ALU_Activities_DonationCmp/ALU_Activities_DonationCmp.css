@@ -1,0 +1,167 @@
+.THIS {
+}
+.THIS .custom-container {
+    border: 2px solid  #f07f07;
+    border-radius: 10px; /* Adjust the border-radius as needed for round corners */
+    padding: 10px; /* Adjust padding as needed */
+}
+
+.THIS .slds-modal__header {
+    background-color:  #f07f07;
+}
+
+
+
+.THIS .slds-form-element__control .slds-radio {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 1rem;
+}
+
+.THIS .slds-form-element__label {
+    display: inline-block;
+    vertical-align: middle;
+}
+.THIS.radio-group-container {
+    text-align: center;
+    border:2px solid  #f07f07;
+    padding: 18px;
+    /* padding: 2%;
+    border: 2px solid orange; */
+}
+.THIS .slds-radio_faux {
+    border-color: #0070D2;
+}
+.THIS .slds-button_brand {
+    background-color:  #f07f07;
+}
+
+.THIS .slds-form-element__label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #4A4A4A;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+.THIS .slds-input {
+    border: 1px solid  black;
+}
+.THIS .slds-radio__label .slds-radio_faux{
+    border: 2px solid  #f07f07;
+}
+
+
+.THIS .slds-radio .slds-radio__label {
+    font-size: 14px;
+    color: #4A4A4A;
+    margin-left: 0.5rem;
+     text-align: center;
+}
+.THIS.slds-form-element__label {
+    text-align: center;
+}
+.THIS.mygroup .slds-form-element__label {
+    text-align: center;
+}
+.THIS .radio-group-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.THIS .slds-form-element__label {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+.THIS .input-field {
+    background-color: #f5f5f5;
+    padding: 10px;
+}
+
+
+/* table css added by venugopal */
+
+.THIS .table {
+    width: 100%;
+    background-color: white;
+}
+
+
+.THIS .table,.THIS  th,.THIS  td {
+    border-collapse: collapse;
+    padding: 1rem;
+    text-align: left;
+}
+
+.THIS thead th {
+    top: 0;
+    left: 0;
+    background-color: #646263;
+    cursor: pointer;
+    color: white;
+    font-size: 16px;
+    height: 20px;
+
+}
+
+.THIS tbody tr:nth-of-type(2n-1) {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: #E6E6E6;
+    }
+    .THIS tbody tr:nth-of-type(2n) {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: #f5f5f5;
+    }
+
+    .THIS td strong{
+    cursor: pointer;
+}
+
+@media (min-width:800px){
+    .THIS .tab{
+        font-size: 1rem;
+    }
+
+    /* @media (max-width: 650px) {
+
+        .THIS th{
+            display: none;
+        }
+    
+        .THIS td{
+            display: grid;
+             grid-template-columns: 21ch auto;  
+            gap:0.5rem;
+            padding: 0.5rem 1rem;
+        }
+    
+      .THIS  td:first-child{
+            padding-top: 2rem;
+        }
+    
+       .THIS td:last-child{
+            padding-bottom: 2rem;
+        }
+        
+        .THIS td::before{
+            content: attr(data-cell) " : ";
+            font-weight: 700;
+        }
+        .THIS tbody tr:nth-of-type(2n-1) {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        background-color: #E6E6E6;
+        }
+        .THIS tbody tr:nth-of-type(2n) {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        background-color: #f5f5f5;
+        } 
+} */
+
+}
+ 

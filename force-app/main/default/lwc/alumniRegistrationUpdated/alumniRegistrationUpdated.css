@@ -1,0 +1,24 @@
+.my-brand {
+    --sds-c-button-brand-color-background: #ec846c;
+    width: 120%;
+    
+}
+.file-upload {
+    background-color: black;
+    width: 120%;
+    color: white;
+}
+
+.slds-icon {
+    width: 90px; /* Adjust the width as needed */
+    height: 80px; /* Adjust the height as needed */
+}
+
+.large-font {
+    font-size: 20px; /* Adjust the font size as needed */
+}
+
+.removeDropZone {
+    color: #ffffff;
+    --lwc-borderWidthThin: 0px;
+}

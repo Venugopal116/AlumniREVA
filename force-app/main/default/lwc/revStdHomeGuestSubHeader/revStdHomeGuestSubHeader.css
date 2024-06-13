@@ -1,0 +1,21 @@
+.login-wrapper {
+    display: flex;
+    justify-content: end;
+    padding: 0rem 1.875rem;
+    color: black;
+    font-size: 0.875rem;
+    font-weight: 700;
+    background-color: var(--reva-background-page-color);
+
+}
+
+.login-wrapper a {
+    color: black;
+}
+
+@media only screen and (max-width:47.9375rem) {
+    .login-wrapper {
+        font-size: 0.75rem;
+    }
+
+}

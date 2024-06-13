@@ -1,0 +1,68 @@
+<template>
+
+  <div class="container">
+    <div class="tabs">
+        <div class="tab" tabindex="0" data-step="1" onclick={handleStepClick}>  OPEN JOB </div>
+        <div class="tab" tabindex="0" data-step="2" onclick={handleStepClick}> POST JOB </div>
+    </div>
+    <template if:true={isAllJobPostingselected}>
+                <section>
+                    <div class="slds-scrollable_y" style="height:23rem;width:100%;" tabindex="0">
+                    <table class="slds-text-heading_small">
+                        <thead style="position: sticky; top: 0; background-color: white; z-index: 1;">
+                            <tr>
+                                <th> Activity Number </th>
+                                <th> Company Name </th>
+                                <th> Designation </th>
+                                <th> Status </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                          <template if:true={JobPostingList}>
+                            <template for:each={JobPostingList} for:item="blg">
+                                <tr key={blg.Id}>
+                                    <td key={blg.Id} data-cell="Activity Number">
+                                        <p class="slds-text-link pointer-hover" data-id={blg.Id}
+                                            onclick={navigateToRecord}>
+                                            <strong data-id={blg.Id}>{blg.Name}</strong>
+                                        </p>
+                                    </td>
+                                    <td key={blg.Id} data-cell="Contact Name">
+                                        <strong>{blg.Company_Name__c}</strong>
+                                    </td>
+                                    <td key={blg.Id} data-cell="Blog Name">
+                                        <strong>{blg.Designation__c}</strong>
+                                    </td>
+                                    <td key={blg.Id} data-cell="Blog Link">
+                                        <strong>{blg.Status__c}</strong>
+                                    </td>
+                                </tr>
+                            </template>
+                          </template>
+
+                          <template if:true={noRecordsData}>
+                            <div style="text-align:center;color:red;" class="slds-p-top_large">
+                                No Records to Display
+                            </div>
+                          </template>
+                          
+                        </tbody>
+                    </table>
+                </div>
+                </section>
+                
+            </template>
+
+
+
+
+            <template if:true={isEnterJobPostingSelected}>
+              
+                    <lightning-flow flow-api-name='Enter_Job_Postings_Available' >
+       </lightning-flow>
+            </template>
+           
+  </div>
+
+   
+</template>

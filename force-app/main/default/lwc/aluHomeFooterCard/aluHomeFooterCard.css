@@ -1,0 +1,276 @@
+/* resources card footer */
+
+.myResourcesCardTitles{
+   
+    text-align: left;
+    font-size: 20px;
+    color: #0b0a0a;
+    font-family: 'NunitoSans';
+    /* font-family: auto; */
+    font-weight: bold;
+    
+    }
+    .directMeto{
+        padding-left: 20%;
+    }
+    .footerSelectedTitlePadding{
+        /* margin-left: 12%; */
+    }
+
+    .myResourcesCardContent{
+    padding-left: 20%;
+    text-align: left;
+    font-size: 15px;
+    line-height: 212%;
+    color: white;
+    font-family: 'NunitoSans';
+    /* font-family: 'Roboto Slab'; */
+    /* font-family: Arial, sans-serif; */
+    font-weight: 300;
+    }
+
+    .resourceCardEventContent{
+    font-size: 15px;
+    
+    color: white;
+    
+    font-family: Arial, sans-serif;
+    font-weight: 300;
+    }
+    .ResourcesCard_knowMoreButton{
+   
+    width: 46%;
+    background: transparent;
+    color: white;
+    float:right;
+    }
+
+    .slds-list_dotted a {
+       
+        text-decoration: none;
+        transition: color .1s linear;
+        color: white;
+    }    
+
+   .bottom_footer{
+        background-color:#383b43;
+        padding: 3%;
+    }
+
+    .bottom_footer h5 {
+        color: #fff;
+        font-family: 'Roboto Slab';
+        font-weight: 300;
+        /* margin-bottom: 15px; */
+        font-size: 23px;
+    }
+    
+    .bottom_footer button{
+        font-weight: 500;
+    background: #FFCF06;
+    border-radius: 55px;
+    color: #000;
+    width: 38%;
+    font-size: 16px;
+    height: 38px;
+
+    }
+
+    .stay_connected_footer{
+        background-color:#383b43;
+        font-family: 'NunitoSans';
+
+    }
+
+    .stay_connected_footer h2{
+        color: #F07F07;
+        
+       /* font-family: 'Roboto Slab'; */
+        font-size: 2rem;
+    }
+    .stay_connected_footer_contact_info{
+        color: #F07F07;
+        
+       /* font-family: 'Roboto Slab';  */
+        font-size: 1.2rem;
+    }
+    .contactDetails{
+        font-size: 12px;
+        /* line-height: 212%; */
+        color: white;
+        /* font-family: 'Roboto Slab'; */
+        
+        font-weight: 300;
+        }
+    .stay_connected_footer h4{
+
+    font-size: 16px;
+    text-align: center;
+    color: white;
+    line-height: 30px;
+    font-weight: 300;
+    margin: 30px 0 40px 0;
+
+    }
+
+    .stay_connected_footer small{
+        font-size: 108%;
+        font-weight: 400;
+        color: #F07F07;
+    }
+
+   
+
+    .stay_connected_footer div{
+
+    }
+
+    .icons-container {
+        display: flex; /* Use flexbox */
+        justify-content: center; /* Center items horizontally */
+        align-items: center; /* Center items vertically */
+    }
+
+    .iconsAlignment{
+        margin-left: 42.5%;
+       
+    }
+    
+
+    .fbIcon{
+        
+        width:2%;
+        margin-right: 1%;
+    }
+    .twitterIcon{
+        width:2%;
+        margin-right: 1%;
+    }
+    .linkedInIcon{
+        width:2%;
+        margin-right: 1%;
+    }
+    .instaIcon{
+        width:1.8%;
+        margin-right: 1%;
+    }
+    .yotubeIcon{
+        width:2%;
+        margin-right: 1%;
+    }
+    .vcImg{
+        width: 100%;
+        height: auto;
+    }
+    .vcMsgBody{
+        color: rgb(234, 234, 234);
+    }
+    .slds-list_dotted, .slds-list--dotted {
+        margin-left: 0; 
+           list-style: disc;
+       }
+
+       .aboutUsLink {
+        text-decoration: underline;
+        color: rgb(255, 255, 255); /* Default color */
+      }
+      
+      .aboutUsLink:hover {
+        color:  #F07F07; /* Color on hover */
+      }
+
+    @media only screen and (min-width: 321px) and (max-width: 767px) {
+
+        .slds-list_dotted, .slds-list--dotted {
+         margin-left: 0; 
+            list-style: disc;
+        }
+
+        .footerSelectedTitlePadding{
+            margin-left: 0%;
+        }
+
+        .iconsAlignment{
+            margin-left: 19.8%;
+           
+        }
+
+        .fbIcon{
+            width:10%;
+            margin-right: 2.5%;
+        }
+        .twitterIcon{
+            width:10%;
+            margin-right: 2.5%;
+        }
+        .linkedInIcon{
+            width:10%;
+            margin-right: 2.5%;
+        }
+        .instaIcon{
+            width:9.8%;
+            margin-right: 2.5%;
+        }
+        .yotubeIcon{
+            width:10%;
+            margin-right: 2.5%;
+        }
+        .socialMediaIcons{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .textAlign{
+            text-align: center;
+        }
+        .myResourcesCardTitles{
+   
+            /* font-size: 25px;
+            color: #F07F07; */
+            /* font-family: Arial, sans-serif; */
+            /* font-family: 'Roboto Slab';
+            font-weight: 300; */
+            text-align: center;
+            /* font-family: Arial, sans-serif; */
+            padding-left: 0%;
+  
+            font-family: 'NunitoSans';
+            color: #0b0a0a;
+            font-weight: bold;
+            font-size: 1.5em;
+            text-align: center;
+            
+        }
+        .myResourcesCardContent{
+            
+  
+            padding-left: 0%;
+            font-size: 1.2em;
+            line-height: 212%;
+            color: white;
+            /* font-family: Arial, sans-serif; */
+            font-family: 'NunitoSans';
+            font-weight: 300;
+            text-align: center;
+            text-align: center;
+            
+            }
+            .directMeto{
+                padding-left: 0%;
+            }
+            .aboutUsLink {
+                text-decoration: underline;
+                color: rgb(255, 255, 255); /* Default color */
+                font-family: 'NunitoSans';
+              }
+              
+              .aboutUsLink:hover {
+                color:  #F07F07; /* Color on hover */
+              }
+              .vcImg {
+                width: 50%;
+                height: auto;
+            }
+
+    }

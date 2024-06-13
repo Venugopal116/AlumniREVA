@@ -1,0 +1,175 @@
+.main-menu-container {
+    display: flex;
+    background-color: var(--reva-brand-color);
+    border-radius: 0.625rem;
+    padding: 8px 10px;
+    height: 100%;
+    color: white;
+    gap: 1.25rem;
+    align-items: center;
+}
+
+.user-icon {
+    min-width: 2.5rem;
+}
+
+.user-icon img {
+    height: 2.5rem;
+    width: 2.5rem;
+    object-fit: contain;
+}
+
+.main-menu-info {
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    word-break: break-all;
+    word-wrap: break-word;
+    white-space: nowrap;
+    color: #000;
+}
+
+.main-menu-info-heading {
+    font-size: 0.9375rem;
+}
+
+.main-menu-info-sub-heading {
+    font-size: 0.8125rem;
+    color: white;
+}
+
+.menu-btn {
+    min-width: 1.25rem;
+    cursor: pointer;
+}
+
+.menu-btn img {
+    width: 1.25rem;
+    height: 1.25rem;
+    object-fit: contain;
+}
+
+.profile-menu-section-wrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: #EBD7CA;
+    border: 0.0625rem solid lightgrey;
+    border-radius: 0.625rem;
+    padding: 0.625rem 0.625rem;
+    color: #000;
+    gap: 0.9375rem;
+}
+
+.profile-menu-section-btn {
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile-menu-section-container {
+    display: flex;
+    flex-direction: row;
+    gap: 0.625rem;
+}
+
+.profile-menu-section {
+    border-right: 0.125rem dotted grey;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    font-size: 0.8125rem;
+}
+
+.profile-menu-section:first-child,
+.profile-menu-section:last-child {
+    border: none;
+}
+
+.profile-menu-section-heading {
+    font-weight: 700;
+}
+
+.profile-menu-section-content {
+    color: var(--reva-content-text-blue-color);
+    font-weight: 700;
+}
+
+.my-name-section {
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+}
+
+.ring {
+    transform: rotate(-90deg);
+    transform-origin: center;
+}
+
+.percentage-text {
+    fill: grey;
+    font-size: xx-small;
+}
+
+.performance-section-icon {
+    min-width: 3.125rem;
+}
+
+.performance-section-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.625rem;
+}
+
+@media only screen and (max-width: 50rem) {
+    .main-menu-info-heading {
+        font-size: 0.8125rem;
+    }
+
+    .user-icon {
+        min-width: 2.5rem;
+    }
+
+    .user-icon img {
+        height: 2.5rem;
+        width: 2.5rem;
+    }
+
+    .menu-btn {
+        min-width: 1.25rem;
+    }
+
+    .menu-btn img {
+        width: 1.25rem;
+        height: 1.25rem;
+    }
+
+    .main-menu-info-sub-heading {
+        font-size: 0.75rem;
+    }
+
+    .profile-menu-section-container {
+        flex-direction: column;
+    }
+
+    .profile-menu-section {
+        border: none;
+        width: 100%;
+        gap: 0;
+        border-bottom: 0.125rem dotted darkgrey;
+        font-size: 0.75rem;
+    }
+
+    .performance-section {
+        gap: 0.3125rem;
+    }
+
+    .performance-section-item {
+        justify-content: flex-start;
+        gap: 0.625rem
+    }
+
+    .performance-section-icon {
+        min-width: 2.5rem;
+    }
+}

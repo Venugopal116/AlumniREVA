@@ -1,0 +1,88 @@
+<aura:component controller="REVA_CaseCreationCmp_Ctrl"
+    implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction"
+    access="global">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="DisableDependent" type="boolean" default="true" />
+    <aura:attribute name="objCase" type="Case" default="{'sobjectType' : 'Case',
+                                                        'Case_Status__c' : 'New'}" />
+    <aura:attribute name="Spinner" type="boolean" default="false" />
+    <aura:attribute name="buttonDisable" type="boolean" default="false" />
+    <aura:attribute name="fileName" type="String" default="No File Selected" />
+    <aura:attribute name="map_CaseManagement" type="Map" />
+    <aura:attribute name="Remarks" type="string" />
+    <aura:attribute name="docRequired" type="string" />
+    <aura:attribute name="caseRecTypeID" type="string" />
+    <aura:attribute name="fileVisible" type="boolean" default="false" />
+    <aura:attribute name="filerequired" type="string" />
+
+    <aura:if isTrue="{!v.Spinner}">
+        <div aura:id="spinnerId" class="slds-spinner_container">
+            <div class="slds-spinner--brand  slds-spinner slds-spinner--large slds-is-relative" role="alert">
+                <span class="slds-assistive-text">Loading</span>
+                <div class="slds-spinner__dot-a"></div>
+                <div class="slds-spinner__dot-b"></div>
+            </div>
+        </div>
+    </aura:if>
+    <div style="background:#EFDFD0;"> <!-- new -->
+    <div class="heading"></div>
+    <lightning:recordEditForm aura:id="CreateCase" objectApiName="Case" recordTypeId="{!v.caseRecTypeID}">
+        <lightning:messages />
+    
+        <div class="slds-grid">
+            <div class="slds-col slds-size_1-of-2 slds-var-p-around_x-small">
+                <lightning:inputField required="true" value="{!v.objCase.Category__c}" fieldName="Category__c">
+                </lightning:inputField>
+            </div>
+            <div class="slds-col slds-size_1-of-2 slds-var-p-around_x-small">
+                <lightning:inputField required="true" value="{!v.objCase.Sub_Category__c}"
+                    onchange="{!c.onSubCatChange}" fieldName="Sub_Category__c"></lightning:inputField>
+            </div>
+        </div>
+
+        <div class="slds-grid">
+            <div class="slds-col slds-size_1-of-2 slds-var-p-around_x-small">
+                <lightning:inputField required="true" value="{!v.objCase.Subject}" fieldName="Subject">
+                </lightning:inputField>
+            </div>
+            <div class="slds-col slds-size_1-of-2 slds-var-p-around_x-small">
+                <lightning:inputField required="true" value="{!v.objCase.Description}" fieldName="Description">
+                </lightning:inputField>
+            </div>
+        </div>
+
+        <div class="slds-grid">
+            <div class="slds-col slds-size_1-of-2 slds-var-p-around_x-small">
+                <lightning:inputField required="true" value="{!v.objCase.Case_Status__c}" fieldName="Case_Status__c">
+                </lightning:inputField>
+            </div>
+            <aura:if isTrue="{!v.objCase.Case_Status__c == 'Reopened'}">
+                <div class="slds-col slds-size_1-of-2 slds-var-p-around_x-small">
+                    <lightning:inputField required="true" value="{!v.objCase.Old_Case_Number__c}"
+                        fieldName="Old_Case_Number__c"></lightning:inputField>
+                </div>
+            </aura:if>
+        </div>
+    
+    </lightning:recordEditForm>
+    <center>
+        <aura:if isTrue="{!v.fileVisible}">
+            <lightning:input name="CaseFile" aura:id="FileInput" required="{!v.filerequired == 'true' ? true : false}"
+                type="file" label="Attach File" onchange="{!c.handleFilesChange}" />
+            <div class="slds-text-body_small slds-text-color_error">{!v.fileName}</div>
+            <div class="slds-text-body_small">
+                <aura:if isTrue="{!not(empty(v.Remarks))}">
+                    <!--<b>Document Required :</b> &nbsp;{!v.docRequired} <br/>--><br />
+                    <b>Remarks :</b>&nbsp; {!v.Remarks} <br />
+                    <b>Type of File:</b>&nbsp; pdf, jpeg, jpg <br />
+                    <b>Max File Size:</b>&nbsp; 25MB
+                </aura:if>
+            </div>
+        </aura:if>
+        <div class="slds-p-around_medium">
+            <lightning:button variant="brand" disabled="{!v.buttonDisable}" label="Save" title="Save" class="backColor"
+                onclick="{!c.saveCase}" />
+        </div>
+    </center>
+</div><!-- new -->
+</aura:component>

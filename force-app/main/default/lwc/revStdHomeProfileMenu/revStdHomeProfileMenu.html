@@ -1,0 +1,132 @@
+<!--
+    ## Author
+    ! Owais Amin Ahanger
+     Usage
+    Experience Builder >> Student Portal >> Home Page
+-->
+<template>
+	<template lwc:if={showMainMenuSection}>
+		<div class="main-menu-container">
+			<div class="main-menu user-icon">
+				<img src={userIconUrl} alt="User Icon" />
+			</div>
+			<div class="main-menu-info">
+				<span class="main-menu-info-heading"><b>Welcome!</b>&nbsp; {name}</span>
+				<br>
+				<span class="main-menu-info-sub-heading">{currentDate}</span>
+			</div>
+			<div class="menu-btn" onclick={handleProfileSection}>
+				<img src={showButtonIconUrl} alt="Show Button Icon" />
+			</div>
+		</div>
+	</template>
+	<template lwc:if={showProfileSection}>
+		<div class="profile-menu-section-wrapper">
+			<div class="profile-menu-section-btn">
+				<span class="profile-menu-section-heading"> My Profile
+				</span>
+				<span onclick={handleMenuSection} class="menu-btn">
+					<img src={hideButtonIconUrl} alt="Close Button Icon">
+				</span>
+			</div>
+			<div class="profile-menu-section-container">
+				<div class="my-profile-section profile-menu-section ">
+					<div class="my-name-section">
+						<span class="user-icon">
+							<img src={userIconUrl} alt="User Icon">
+						</span>
+
+						<span><b>{name}</b></span>
+					</div>
+					<br>
+					<div class="my-address-section">
+						<div><b>Address : </b></div>
+						<div>{mailingStreet},</div>
+						<div>{mailingCity}</div>
+						<div>Pin:&nbsp;{mailingPostalCode} &nbsp;{mailingState},{mailingCountry}</div>
+					</div>
+				</div>
+				<div class="gender-section profile-menu-section">
+					<div>
+						<span class="profile-menu-section-heading">SRN Number</span><br>
+						<span class="profile-menu-section-content">{srnNumber}</span>
+					</div>
+					<div>
+						<span class="profile-menu-section-heading">Gender</span><br>
+						<span class="profile-menu-section-content">{gender}</span>
+					</div>
+					<div>
+						<span class="profile-menu-section-heading">Contact Details</span><br>
+						<span class="profile-menu-section-content">{mobilePhone}</span>
+					</div>
+				</div>
+				<div class="course-section profile-menu-section">
+					<div>
+						<span class="profile-menu-section-heading">Application Number</span><br>
+						<span class="profile-menu-section-content"> {applicationNumber}</span>
+					</div>
+					<div>
+						<span class="profile-menu-section-heading">Course Details</span><br>
+						<span class="profile-menu-section-content">{course}</span>
+					</div>
+					<div>
+						<span class="profile-menu-section-heading">Father/Mother Name</span><br>
+						<span class="profile-menu-section-content">{parentName}</span>
+					</div>
+				</div>
+				<div class="nationality-section profile-menu-section">
+					<div>
+						<span class="profile-menu-section-heading">Nationality</span><br>
+						<span class="profile-menu-section-content">{nationality}</span>
+					</div>
+					<div>
+						<span class="profile-menu-section-heading">School</span><br>
+						<span class="profile-menu-section-content">{schoolName}</span>
+					</div>
+					<div>
+						<span class="profile-menu-section-heading"> Email</span><br>
+						<span class="profile-menu-section-content">{personalEmail}</span>
+					</div>
+				</div>
+				<div class="dob-section profile-menu-section">
+					<div>
+						<span class="profile-menu-section-heading">Date Of Birth</span><br>
+						<span class="profile-menu-section-content">{birthdate}</span>
+					</div>
+					<div>
+						<span class="profile-menu-section-heading"> Age</span><br>
+						<span class="profile-menu-section-content">{age}</span>
+					</div>
+					<div>
+						<span class="profile-menu-section-heading ">Language</span><br>
+						<span class="profile-menu-section-content">{motherTongue}</span>
+					</div>
+				</div>
+				<div class="performance-section profile-menu-section">
+					<div class=" performance-section-item">
+						<div class=" performance-section-icon">
+							<svg viewBox="0 0 34 34">
+								<circle cx="17" cy="17" r="15" fill="none" stroke-width="2" stroke="#eee">
+								</circle>
+								<circle class="ring" cx="17" cy="17" r="15" fill="none" stroke-width="2"
+									stroke="#F07F07" stroke-dasharray={circumference} stroke-dashoffset={strokeOffset}>
+								</circle>
+								<text x="18" y="20" class="percentage-text"
+									text-anchor="middle">{totalAttendancePercentage}%</text>
+							</svg>
+						</div>
+						<div>
+							<div>Overall Attendance</div>
+							<div style="color: #F07F07; font-weight:700">{determineAttendanceCategory}</div>
+						</div>
+					</div>
+					<div>
+						<span style="color: red; font-weight:700">Need 75% for annual
+							submission</span>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</template>
+</template>

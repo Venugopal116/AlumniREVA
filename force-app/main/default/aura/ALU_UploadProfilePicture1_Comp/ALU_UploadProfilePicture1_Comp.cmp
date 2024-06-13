@@ -1,0 +1,59 @@
+<aura:component controller="ALU_UploadProfilePictureCtrl"
+                implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    
+    <!-- Id of the Record the page hosting this component is showing -->
+    <aura:attribute name="recordId" type="Id"/>
+    <aura:attribute name="ContId" type="Id"/>
+    <aura:attribute name="AttacId" type="Id"/>
+    <aura:attribute name="fileName" type="string"/>
+    <aura:attribute name="imagepath" type="string"/>
+    <aura:attribute name="pictureSrc" type="String" />
+    <aura:attribute name="message"  type="String" />
+    <aura:handler name="init" value="{!this}" action="{!c.onInit}" />
+    
+    <!--component attributs -->
+    
+    <aura:attribute name="Spinner" type="boolean" default="false"/> 
+    <lightning:layout multipleRows="true">
+      <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="12" largeDeviceSize="12" padding="horizontal-small">
+        <div class="" > 
+          <!-- slds-align_absolute-center -->
+          
+          <div class="slds-box" > 
+              <aura:if isTrue="{!v.Spinner}">
+                  <div aura:id="spinnerId" class="slds-spinner_container">
+                      <div class="slds-spinner--brand  slds-spinner slds-spinner--large slds-is-relative" role="alert">
+                          <span class="slds-assistive-text">Loading...</span>
+                          <div class="slds-spinner__dot-a"></div>
+                          <div class="slds-spinner__dot-b"></div>
+                      </div>
+                  </div>
+              </aura:if>
+           
+              <div class="" onupload = "{!c.Upload1}">
+                  <!-- slds-align_absolute-center -->
+                  <img src="{!v.pictureSrc}" />
+              </div>
+         
+              <lightning:input name="expFile" aura:id="FileInput" type="file"  onchange="{!c.handleFilesChange}" accept=", .png, .jpg, .jpeg"/>
+  
+                <div>
+                  <h3>
+                      <span class="slds-form-element__label" id="file-selector-primary-label-105" style="font-size:14px;">Supported Formats: 
+                          <h3 style="color:#f47318; font-size:14px;"><b>.png, .jpg, .jpeg </b></h3>
+                      </span></h3>
+                  </div>
+  
+  
+              <div class="slds-text-body_small slds-text-color_error">{!v.fileName} </div>
+              
+              <div class="slds-align_absolute-center slds-p-top_medium slds-p-bottom_large">
+                  <lightning:button variant="brand"  label="Save" title="Save" onclick="{!c.Upload1}" />
+              </div>
+          </div>
+      </div>
+      </lightning:layoutItem>
+    </lightning:layout>
+   
+
+</aura:component>

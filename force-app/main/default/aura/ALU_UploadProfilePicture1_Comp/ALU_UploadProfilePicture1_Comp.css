@@ -1,0 +1,104 @@
+.THIS .slds-box {
+   
+    border: 2px solid orange;
+    border-radius: 10px;
+   
+   
+}
+
+.THIS {
+    text-align: center;
+}
+
+.THIS > p {
+    font-size: 14px;
+    color: Red;
+    margin: 4px 0;
+}
+
+.THIS img {
+    min-height: 100px;
+    max-height: 200px;
+    max-width: 300px;
+	width: auto;
+    height: auto;
+    border-radius: 4px;
+
+}
+/* .THIS {
+    max-width: 30%;
+} */
+
+/* .THIS.slds-box {
+    border: 4px solid black;
+} */
+
+/* css Added by Venugopal */
+
+.THIS .slds-file-selector_files .slds-file-selector__body, .THIS .slds-file-selector--files .slds-file-selector__body {
+    display: flex;
+    align-items: center;
+    width: 500px;
+    height: 50px;
+}
+
+.THIS .slds-file-selector__button {
+    display: inline-flex;
+    align-items: center;
+   
+    padding-top: 1%;
+    padding-right: 13%;
+    padding-bottom: 1%;
+    padding-left: 9%;
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+    border-right: dashed;
+    border-radius: 0;
+    color: #f47318;
+}
+
+.THIS .slds-file-selector_files .slds-file-selector__text,.THIS  .slds-file-selector--files .slds-file-selector__text {
+    
+    color: black;
+}
+
+.THIS .slds-file-selector__dropzone {
+    padding: var(--lwc-spacingXxxSmall,0.125rem);
+    border: var(--lwc-borderWidthThin,1px) dashed var(--slds-g-color-border-base-4, var(--lwc-colorBorder,#D4D4D4));
+    border-radius: 20px;
+    border-color: #f47318;
+    border: dashed;
+    font-size: 20px;
+    font-weight: 600;
+    color:#f47318;
+    
+}
+
+.THIS .slds-button_brand,.THIS  .slds-button--brand {
+    border-radius: 19px;
+    font-size: 22px;
+    font-weight: 550;
+    width: 12%;
+    height: 38px;
+    color: white;
+    background-color: #f07f07;
+   }
+
+   @media only screen and (min-width: 321px) and (max-width: 767px) {
+    .THIS .slds-button_brand,.THIS  .slds-button--brand {
+        border-radius: 4px;
+        font-size: 22px;
+        font-weight: 550;
+        width: 40%;
+        height: 38px;
+        color: white;
+        background-color: #f07f07;
+       }
+       .THIS .slds-file-selector_files .slds-file-selector__body, .THIS .slds-file-selector--files .slds-file-selector__body {
+        display: flex;
+        align-items: center;
+        width: 225px;
+        height: 50px;
+    }
+  }

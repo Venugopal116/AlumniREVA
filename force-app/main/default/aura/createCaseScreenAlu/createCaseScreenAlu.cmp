@@ -1,0 +1,45 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global">
+
+<aura:attribute name="isCreateCase" type="boolean" default="true" />
+<aura:attribute name="isOpenCases" type="boolean" default="true" />
+<aura:attribute name="isClosedCases" type="boolean" default="true" />
+
+
+<div style="box-shadow: 2px 4px 9px -4px #6e6e6e; border: 1px solid #f57f26; padding: 5px; border-radius: 10px;">
+     
+            <!-- <div class="slds-float_right payMultiple"> </div> -->
+            <lightning:tabset selectedTabId="CreateCase" class="tab-active ltng-tabset" variant="scoped">
+
+                <lightning:tab label="Create Case" id="CreateCase">
+                    <aura:if isTrue="{!v.isCreateCase}">
+                       <c:REVA_CaseCreationCmp/>
+                    </aura:if> 
+                </lightning:tab>
+
+                <lightning:tab label="Open Cases" id="OpenCases">
+                    <aura:if isTrue="{!v.isOpenCases}">
+                        <c:openCasesAlu></c:openCasesAlu>
+                        <aura:set attribute="else">
+                            <div style="text-align:center;color:red;">
+                                No Records to Display
+                            </div>
+                        </aura:set>
+                    </aura:if> 
+                </lightning:tab>
+
+                <lightning:tab class="tabColor" label="Closed Cases" id="ClosedCases">
+                   <aura:if isTrue="{!v.isClosedCases}">
+                    <c:closedCasesScreenAlu></c:closedCasesScreenAlu>
+                        <aura:set attribute="else">
+                            <div style="text-align:center;color:red;">
+                                No Records to Display
+                            </div>
+                        </aura:set>
+                    </aura:if> 
+                </lightning:tab>
+            </lightning:tabset>
+
+      
+        </div>
+
+</aura:component>

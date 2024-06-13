@@ -1,0 +1,78 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" controller="SP_SideMenuController">
+
+    <!-- Attribute to hold the navigation menu items -->
+    <aura:attribute name="navigationMenuItems" type="NavigationMenuItem[]" />
+
+    <!-- Attribute to hold the URL of the static resource -->
+    <aura:attribute name="baseResourceURL" type="String"
+        default="{!$Resource.SR_STUDENTPORTALASSETS + '/StudentPortalAssests/Icons/Navigation-Icons/'}" />
+
+    <!-- Handler to initiate the Apex call when the component is initialized -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+
+    <aura:attribute name="selectedMenuLabel" type="String" default="Fees &amp; Payments" />
+    <aura:attribute name="isMenuButtonActive" type="Boolean" default="false" />
+
+
+    <div class="side-menu-wrapper">
+        <div class="side-menu-btn-icons-container">
+            <!-- Check if the menu button is active before rendering the tabs -->
+            <!-- <div class="{!'main-menu-btn-container ' +(v.isMenuButtonActive ? 'menu-active':'menu-not-active')}">
+                <div class="main-menu-btn" onclick="{!c.handleToggleMenu}" title="Main Menu">
+                    <img src="{!v.baseResourceURL +'hamburger-menu.png'}" alt="Hamburger Menu Icon" />
+                </div>
+            </div> -->
+            <!-- <aura:if isTrue="{!v.isMenuButtonActive}"> -->
+            <!-- Iterate over the numberArray to create buttons -->
+            <aura:iteration items="{!v.navigationMenuItems}" var="navItem">
+                <div class="{!'sub-menu-btn-container ' + (navItem.isActive ? 'btn-active' : '')}">
+                    <div class="sub-menu-btns" onclick="{!c.handleButtonClick}" data-value="{!navItem.Label}"
+                        title="{!navItem.Label}">
+                        <!-- Custom button with image -->
+
+                        <img src="{!navItem.imageUrl}" alt="{!navItem.Label}" />
+
+                    </div>
+                </div>
+            </aura:iteration>
+            <!-- </aura:if> -->
+        </div>
+
+        <div class="side-menu-tabs-container">
+            <!-- <aura:if isTrue="{!v.isMenuButtonActive}"> -->
+            <aura:if isTrue="{!v.selectedMenuLabel == 'Fees &amp; Payments'}">
+                <c:FEE_StudentPayment />
+            </aura:if>
+
+            <aura:if isTrue="{!v.selectedMenuLabel == 'Mentor/Mentee'}">
+                <c:revaStdMentorMentee />
+            </aura:if>
+
+            <aura:if isTrue="{!v.selectedMenuLabel =='Academics'}">
+                <c:ACM_StudentAcademics />
+            </aura:if>
+            <aura:if isTrue="{!v.selectedMenuLabel == 'Time Table'}">
+                <c:TT_ViewSchedule_Student />
+            </aura:if>
+            <aura:if isTrue="{!v.selectedMenuLabel == 'Attendance'}">
+                <c:ATT_StudentAttendance />
+            </aura:if>
+            <aura:if isTrue="{!v.selectedMenuLabel == 'Elective Preference'}">
+                <c:STOB_DefineStudentCoursePreferenceV1 />
+            </aura:if>
+            <aura:if isTrue="{!v.selectedMenuLabel == 'Assessment'}">
+                <c:revaStdAssesmentCombine />
+            </aura:if>
+            <aura:if isTrue="{!v.selectedMenuLabel == 'Survey'}">
+                <c:revaStdSurveys />
+            </aura:if>
+            <aura:if isTrue="{!v.selectedMenuLabel == 'Support Request'}">
+                <c:revaStdSupportReq />
+            </aura:if>
+            <!-- </aura:if> -->
+
+        </div>
+
+    </div>
+</aura:component>

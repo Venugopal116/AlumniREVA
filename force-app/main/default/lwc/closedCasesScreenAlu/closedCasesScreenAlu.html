@@ -1,0 +1,51 @@
+<template>
+    <div class="container">
+         <template lwc:if={isClosedCases}> 
+                <section>
+                    <div class="slds-scrollable_y" style="height:23rem;width:100%;" tabindex="0">
+                    <table class="slds-text-heading_small">
+                        <thead style="position: sticky; top: 0; background-color: white; z-index: 1;">
+                            <tr>
+                                <th> Case Number </th>
+                                <th> Contact Name </th>
+                                <th> Subject </th>
+                                <th> Status </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                             <template if:true={caseList}>
+                            <template for:each={caseList} for:item="cse">
+                                <tr key={cse.Id}>
+
+                                    <td data-cell="Case Number">
+                                        <p class="slds-text-link pointer-hover" data-id={cse.Id}
+                                            onclick={navigateToCaseRecord}>
+                                            <strong data-id={cse.Id}>{cse.CaseNumber}</strong>
+                                        </p>
+                                    </td>
+                                    <td data-cell="Contact Name">
+                                        <strong>{cse.Contact_Name__c}</strong>
+                                    </td>
+                                    <td data-cell="Subject">
+                                        <strong>{cse.Subject}</strong>
+                                    </td>
+                                    <td data-cell="Status">
+                                        <strong>{cse.Status}</strong>
+                                    </td>
+                                </tr>
+                            </template>
+                        </template>
+
+                        <template if:true={noCaseData}>
+                            <div style="text-align:center;color:red;" class="slds-p-top_large">
+                                No Records to Display
+                            </div>
+                        </template>
+
+                        </tbody>
+                    </table>
+                </div>
+                </section>
+        </template> 
+    </div>
+</template>

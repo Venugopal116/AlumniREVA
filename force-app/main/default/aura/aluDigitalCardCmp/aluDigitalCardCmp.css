@@ -1,0 +1,140 @@
+.THIS .slds-tabs_scoped__item{
+    position: relative !important;
+    margin-bottom: calc(-1 * var(--lwc-borderWidthThin,1px))!important;
+    background-color: #fef1e8 !important;
+}
+.THIS .title{
+   display: flex;
+   flex-direction: column;
+ }
+ .THIS .title-name{
+    font-size: large;
+    font-weight: bold;
+ }
+ .THIS .title-info{
+    font-weight: bold;
+    color: #4F73A3;
+ }
+.THIS .Container{
+    background-color:grey;
+}
+.THIS .title-year{
+    font-weight: bold;
+    color: black;
+    text-align:right;
+}
+.THIS .Heading{
+    background-color: grey;
+    border-radius: 10px;
+    height: 40px;
+    color: white;
+    margin: 2px;     
+        }
+.THIS .backColor{
+    background-color: #f57f26;
+    border:1px solid white;
+    }
+
+.THIS .curriText{
+    font-size: 17px;
+    font-weight: 600;
+}
+.THIS .firstColumn{
+    border-bottom: 1px dotted #f57f26;
+    text-align: center;
+    padding:1%;
+}
+.THIS .instHead{
+    font-size: 18px;
+    font-weight: 600;
+}
+.THIS .padd{
+    padding: 0% 1% 1% 1%;
+}
+.THIS .slds-tabs_scoped__link {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    cursor: pointer;
+    height: var(--lwc-lineHeightTab,2.5rem);
+    line-height: var(--lwc-lineHeightTab,2.5rem);
+    padding: 0 var(--lwc-spacingMedium,1rem);
+    color: var(--slds-g-color-neutral-base-30, var(--lwc-colorTextActionLabel,rgba(0, 0, 0, 0.86)));
+    border-top: 0px;
+    border-bottom: 0px;
+    border-image: initial;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+    border-radius: 0px;
+    color: black;
+    font-size:15px;
+    font-weight: 600;                             
+}
+.THIS .slds-tabs--scoped__link {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    cursor: pointer;
+    height: var(--lwc-lineHeightTab,2.5rem);
+    line-height: var(--lwc-lineHeightTab,2.5rem);
+    padding: 0 var(--lwc-spacingMedium,1rem);
+    color: var(--slds-g-color-neutral-base-30, var(--lwc-colorTextActionLabel,rgba(0, 0, 0, 0.86)));
+    border-top: 0px;
+    border-bottom: 0px;
+    border-image: initial;
+    border-left: var(--lwc-borderWidthThin,1px) solid transparent;
+    border-right: var(--lwc-borderWidthThin,1px) solid transparent;
+    border-radius: 0px;
+    color: black;
+    font-size:15px;
+    font-weight: 600;                            
+}
+
+.THIS .slds-is-active .slds-tabs_scoped__link{
+    background-color:#f57f26 !important;
+    color:white !important;
+    font-weight:600 !important;
+    text-decoration: none !important;
+}
+.THIS .slds-tabs_scoped__content {
+    border: 0px solid white !important;
+    padding-top:5px !important;     
+    padding: 7px 1px 5px 0px!important;                                                              
+}
+.THIS .slds-tabs_scoped__nav {
+    display: flex;
+    align-items: flex-start;
+    /* background-color:#E9E9E9 !important; */
+    border:0px solid white !important;
+    }
+
+.THIS .slds-tabs_scoped__nav {/*Orange tabset background*/
+        display: flex;
+        align-items: flex-start;
+        border: 0 solid white!important;
+        background-color: transparent !important;
+    }
+.THIS .slds-tabs_scoped__content {
+    background-color: var(--slds-g-color-neutral-base-100, var(--lwc-colorBackgroundAlt,rgb(255, 255, 255)));
+    border:px solid white !important;
+    border-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: var(--lwc-borderRadiusMedium,0.25rem);
+    border-bottom-left-radius: var(--lwc-borderRadiusMedium,0.25rem);
+    padding: 7px 1px 5px 0px!important;
+                                }
+.THIS .slds-tabs_scoped__content .slds-tabs--scoped__content {
+    background-color: var(--slds-g-color-neutral-base-100, var(--lwc-colorBackgroundAlt,rgb(255, 255, 255)));
+    border:0px solid white !important;
+    border-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: var(--lwc-borderRadiusMedium,0.25rem);
+    border-bottom-left-radius: var(--lwc-borderRadiusMedium,0.25rem);
+    padding-top:10px !important;
+    }

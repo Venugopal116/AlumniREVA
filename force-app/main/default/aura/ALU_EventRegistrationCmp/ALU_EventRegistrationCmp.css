@@ -1,0 +1,48 @@
+.THIS {
+}
+
+
+.THIS .table {
+    width: 100%;
+    background-color: white;
+}
+
+
+.THIS .table,.THIS  th,.THIS  td {
+    border-collapse: collapse;
+    padding: 1rem;
+    text-align: left;
+}
+
+.THIS thead th {
+    top: 0;
+    left: 0;
+    background-color: #646263;
+    cursor: pointer;
+    color: white;
+    font-size: 16px;
+    height: 20px;
+
+}
+
+.THIS tbody tr:nth-of-type(2n-1) {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: #E6E6E6;
+    }
+    .THIS tbody tr:nth-of-type(2n) {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: #f5f5f5;
+    }
+
+    .THIS td strong{
+    cursor: pointer;
+}
+
+@media (min-width:800px){
+    .THIS .tab{
+        font-size: 1rem;
+    }
+}
+ 

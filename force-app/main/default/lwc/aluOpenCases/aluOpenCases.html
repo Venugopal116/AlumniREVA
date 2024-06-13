@@ -1,0 +1,167 @@
+<template>
+    <lightning-layout class="custom-container" multiple-rows>
+        <lightning-layout-item class="slds-p-vertical_medium" size="12" small-device-size="12" medium-device-size="12" large-device-size="12" >
+            
+            
+                <div class="slds-tabs_custom">
+                    <ul class="slds-tabs_custom__nav" role="tablist">
+                        <li class={createCaseClass} title="Item One" role="presentation">
+                            <a class="slds-tabs_custom__link" href="#" role="tab" tabindex="0" 
+                                aria-selected={isCreateCaseSelected} onclick={handleTabClick} 
+                                data-tab="createCase" aria-controls="tab-default-1" id="tab-default-1__item">
+                                CREATE CASE
+                            </a>
+                        </li>
+                        <li class={openCasesClass} title="Item Two" role="presentation">
+                            <a class="slds-tabs_custom__link" href="#" role="tab" tabindex="-1" 
+                                aria-selected={isOpenCasesSelected} onclick={handleTabClick} 
+                                data-tab="openCases" aria-controls="tab-default-2" id="tab-default-2__item">
+                                OPEN CASES
+                            </a>
+                        </li>
+                        <li class={closedCasesClass} title="Item Three" role="presentation">
+                            <a class="slds-tabs_custom__link" href="#" role="tab" tabindex="-1" 
+                                aria-selected={isClosedCasesSelected} onclick={handleTabClick} 
+                                data-tab="closedCases" aria-controls="tab-default-3" id="tab-default-3__item">
+                                CLOSED CASES
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- <div if:true={isCreateCaseSelected} id="tab-default-1" 
+                        class="slds-tabs_default__content" role="tabpanel" 
+                        aria-labelledby="tab-default-1__item">
+                        <p>tab 1 selected</p>
+                        
+                    </div>
+                    <div if:true={isOpenCasesSelected} id="tab-default-2" 
+                        class="slds-tabs_default__content" role="tabpanel" 
+                        aria-labelledby="tab-default-2__item">
+                        <p>tab 2 selected</p>
+                        
+                    </div>
+                    <div if:true={isClosedCasesSelected} id="tab-default-3" 
+                        class="slds-tabs_default__content" role="tabpanel" 
+                        aria-labelledby="tab-default-3__item">
+                        <p>tab 3 selected</p>
+                        
+                    </div>  -->
+                </div>
+          
+        </lightning-layout-item>
+         <!-- create case -->
+        <lightning-layout-item  if:true={isCreateCaseSelected}  size="12" small-device-size="12" medium-device-size="12" large-device-size="12" padding="vertical-medium" >
+           <h1>case creation form here</h1> 
+        </lightning-layout-item>
+         <!-- open case table -->
+        <lightning-layout-item class="slds-p-vertical_medium"  if:true={isOpenCasesSelected}  size="12" small-device-size="12" medium-device-size="12" large-device-size="12"   >
+          <div class="slds-scrollable_y" style="height:30rem;width:100%;" tabindex="0">
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered" aria-label="Example default base table of Opportunities">
+                <thead style="position: sticky; top: 0; background-color: white; z-index: 1;">
+                  <tr class="slds-line-height_reset">
+                    <th class="" scope="col">
+                      <div class="slds-truncate" title="Opportunity Name" >Case Number</div>
+                    </th>
+                    <th class="" scope="col">
+                      <div class="slds-truncate" title="Account Name">Contact Name</div>
+                    </th>
+                    <th class="" scope="col">
+                      <div class="slds-truncate" title="Close Date">Subject</div>
+                    </th>
+                    <th class="" scope="col">
+                      <div class="slds-truncate" title="Stage">Status</div>
+                    </th>
+                   
+                  </tr>
+                </thead>
+                <tbody>
+                    <template if:true={caseList}>
+                        <template  for:each={caseList} for:item="cse">
+                  <tr key={cse.Id} class="slds-hint-parent" style="padding:10px;">
+                    
+                    <!-- <th data-label="Opportunity Name" scope="row">
+                      <div class="slds-truncate" title="Cloudhub">
+                        <a href="#" tabindex="-1">Cloudhub</a>
+                      </div>
+                    </th> -->
+                    <td key={cse.Id} data-label="Account Name">
+                      <!-- <div data-id={cse.Id} onclick={navigateToCaseRecord} class="slds-truncate" title="casenumber">{cse.CaseNumber}</div> -->
+                      <a data-id={cse.Id} onclick={navigateToCaseRecord} class="slds-truncate" title="casenumber" >{cse.CaseNumber}</a>
+                    </td>
+                    <td key={cse.Id} data-label="Close Date">
+                      <div class="slds-truncate" title="4/14/2015">{cse.Contact_Name__c}</div>
+                    </td>
+                    <td key={cse.Id} data-label="Prospecting">
+                      <div class="slds-truncate" title="Prospecting">{cse.Subject}</div>
+                    </td>
+                    <td key={cse.Id} data-label="Confidence">
+                      <div class="slds-truncate" title="20%">{cse.Status}</div>
+                    </td>
+               
+                    
+                  </tr>
+                </template>
+            </template>
+           
+                </tbody>
+              </table>
+            </div>
+        </lightning-layout-item>
+        <!-- closed case table -->
+        <lightning-layout-item class="slds-p-vertical_medium"  if:true={isClosedCasesSelected}  size="12" small-device-size="12" medium-device-size="12" large-device-size="12" padding="vertical-medium" >
+          <div class="slds-scrollable_y" style="height:15rem;width:100%;" tabindex="0">
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered" aria-label="Example default base table of Opportunities">
+                <thead style="position: sticky; top: 0; background-color: white; z-index: 1;">
+                  <tr class="slds-line-height_reset">
+                    <th class="" scope="col">
+                      <div class="slds-truncate" title="Opportunity Name">Case Number</div>
+                    </th>
+                    <th class="" scope="col">
+                      <div class="slds-truncate" title="Account Name">Contact Name</div>
+                    </th>
+                    <th class="" scope="col">
+                      <div class="slds-truncate" title="Close Date">Subject</div>
+                    </th>
+                    <th class="" scope="col">
+                      <div class="slds-truncate" title="Stage">Status</div>
+                    </th>
+                   
+                  </tr>
+                </thead>
+                <tbody>
+                    <template if:true={caseList}>
+                        <template  for:each={caseList} for:item="cse">
+                  <tr key={cse.Id} class="slds-hint-parent" style="padding:10px;">
+                    
+                    <!-- <th data-label="Opportunity Name" scope="row">
+                      <div class="slds-truncate" title="Cloudhub">
+                        <a href="#" tabindex="-1">Cloudhub</a>
+                      </div>
+                    </th> -->
+                    <td key={cse.Id} data-label="Account Name">
+                      <!-- <div class="slds-truncate" title="casenumber">{cse.CaseNumber}</div> -->
+                      <a data-id={cse.Id} onclick={navigateToCaseRecord} class="slds-truncate" title="casenumber" >{cse.CaseNumber}</a>
+                    </td>
+                    <td key={cse.Id} data-label="Close Date">
+                      <div class="slds-truncate" title="4/14/2015">{cse.Contact_Name__c}</div>
+                    </td>
+                    <td key={cse.Id} data-label="Prospecting">
+                      <div class="slds-truncate" title="Prospecting">{cse.Subject}</div>
+                    </td>
+                    <td key={cse.Id} data-label="Confidence">
+                      <div class="slds-truncate" title="20%">{cse.Status}</div>
+                    </td>
+               
+                    
+                  </tr>
+                </template>
+            </template>
+           
+                </tbody>
+              </table>
+            </div>
+        </lightning-layout-item>
+
+        
+
+    </lightning-layout>
+</template>

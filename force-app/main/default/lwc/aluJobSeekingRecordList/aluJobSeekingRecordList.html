@@ -1,0 +1,67 @@
+<template>
+
+  <div class="container">
+    <div class="tabs">
+        <div class="tab" tabindex="0" data-step="1" onclick={handleStepClick}> SEEK A JOB </div>
+        <div class="tab" tabindex="0" data-step="2" onclick={handleStepClick}> ACTIVE JOB SEEKERS </div>
+    </div>
+    <template if:true={isEnterJobSeekingSelected}>
+                <section>
+                    <div class="slds-scrollable_y" style="height:23rem;width:100%;" tabindex="0">
+                    <table class="slds-text-heading_small">
+                        <thead style="position: sticky; top: 0; background-color: white; z-index: 1;">
+                            <tr>
+                                <th> Activity Number </th>
+                                <th> Contact Name </th>
+                                <th> Total Experience(In Years) </th>
+                                <th> Current CTC (In Lakhs) </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                          <template if:true={JobSeekingList}>
+                            <template for:each={JobSeekingList} for:item="blg">
+                                <tr key={blg.Id}>
+                                    <td key={blg.Id} data-cell="Activity Number">
+                                        <p class="slds-text-link pointer-hover" data-id={blg.Id}
+                                            onclick={navigateToRecord}>
+                                            <strong data-id={blg.Id}>{blg.Name}</strong>
+                                        </p>
+                                    </td>
+                                    <td key={blg.Id} data-cell="Contact Name">
+                                        <strong>{blg.Contact_Name__c}</strong>
+                                    </td>
+                                    <td key={blg.Id} data-cell="Blog Name">
+                                        <strong>{blg.Total_Experience_In_Years__c}</strong>
+                                    </td>
+                                    <td key={blg.Id} data-cell="Blog Link">
+                                        <strong>{blg.Current_CTC_In_Lakhs__c}</strong>
+                                    </td>
+                                </tr>
+                            </template>
+                          </template>
+
+                          <template if:true={noRecordsData}>
+                            <div style="text-align:center;color:red;" class="slds-p-top_large">
+                                No Records to Display
+                            </div>
+                          </template>
+                          
+                        </tbody>
+                    </table>
+                </div>
+                </section>
+            </template>
+
+
+
+
+            <template if:true={isAllJobSeekingselected}>
+              
+                    <lightning-flow flow-api-name='Enter_Your_Job_Seeking' >
+       </lightning-flow>
+            </template>
+           
+  </div>
+
+   
+</template>

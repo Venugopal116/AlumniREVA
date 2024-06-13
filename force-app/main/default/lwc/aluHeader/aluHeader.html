@@ -1,0 +1,81 @@
+<template>
+    <!-- <div class="header-wrapper">
+        <div class="reva-logo">
+            <div class="reva-university">
+                <a href={homeUrl} title="Home">
+                    <img src={revaUniversityLogoUrl} alt="Reva University Logo">
+                </a>
+            </div>
+        </div>
+
+       
+        <div style="float:right;">
+
+                <c-alu-home-alumni-sub-header></c-alu-home-alumni-sub-header>     
+         
+        </div>
+
+        <div class="reva-logo">
+            <div class="reva-eleven-years">
+                <a href={homeUrl} title="Home">
+                    <img src={revaElevenYearsLogoUrl} alt=" Reva 11 years Logo">
+                </a>
+            </div>
+        </div>
+    </div> -->
+
+    <template if:true={isDesktop}>
+
+        <lightning-layout class="header-wrapper" multiple-rows>
+
+            <lightning-layout-item class="reva-university" size="12" small-device-size="4" medium-device-size="4" large-device-size="4" padding="horizontal-small">
+                <a href={homeUrl} title="Home">
+                    <img src={revaUniversityLogoUrl} alt="Reva University Logo">
+                </a>
+            </lightning-layout-item>
+    
+            <lightning-layout-item size="12" small-device-size="4" medium-device-size="4" large-device-size="6" padding="horizontal-small">
+                <c-alu-home-alumni-sub-header></c-alu-home-alumni-sub-header> 
+            </lightning-layout-item>
+    
+            <lightning-layout-item class="reva-eleven-years" size="12" small-device-size="4" medium-device-size="4" large-device-size="2" padding="horizontal-small">
+                <a href={homeUrl} title="Home">
+                    <img src={revaElevenYearsLogoUrl} alt=" Reva 11 years Logo">
+                </a>
+            </lightning-layout-item>
+    
+        </lightning-layout>
+
+    </template>
+
+    <template if:true={isMobile}>
+        <lightning-layout class="header-wrapper" multiple-rows>
+
+            <lightning-layout-item class="reva-university reva-eleven-years" size="12" small-device-size="12" medium-device-size="12" large-device-size="6" >
+               <span>
+                <a href={homeUrl} title="Home">
+                    <img src={revaUniversityLogoUrl} alt="Reva University Logo">
+                </a>
+               </span> 
+                <span style="float:right;">
+                    <a href={homeUrl} title="Home">
+                        <img src={revaElevenYearsLogoUrl} alt="Reva 11 years Logo">
+                    </a>
+                </span>
+            </lightning-layout-item>
+
+            <!-- <lightning-layout-item class="reva-eleven-years" size="12" small-device-size="6" medium-device-size="6" large-device-size="6" padding="horizontal-small">
+               
+            </lightning-layout-item> -->
+
+            <lightning-layout-item class="slds-p-bottom_x-small" size="12" small-device-size="12" medium-device-size="12" large-device-size="12" >
+                <c-alu-home-alumni-sub-header></c-alu-home-alumni-sub-header> 
+            </lightning-layout-item>
+
+        </lightning-layout>
+
+    </template>
+
+    
+
+</template>

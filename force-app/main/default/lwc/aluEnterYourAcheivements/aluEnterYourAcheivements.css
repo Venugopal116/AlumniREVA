@@ -1,0 +1,156 @@
+.container{
+    min-height: 100%;
+    background-color: white;
+    padding : 1rem;
+    border: 2px solid orange;
+    border-radius: 10px;
+}
+
+.slds-button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    background-color: orange;
+    background-clip: border-box;
+   
+}
+
+.header{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header div:first-child{
+    width: 50%;
+    align-self: center;
+    text-align: left;
+}
+.checkbox-container{
+    border: 1px solid black;
+    width: 100%;
+    min-height: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 1rem;
+}
+.checkbox-container div label > *{
+    margin-left: 1rem;
+}
+.checkbox-container >*{
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+}
+.checkbox-item{
+    border-radius: 50%;
+    margin-left:0.5rem;
+}
+
+.course-container{
+    width: 100%;
+    min-height: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+.course-container div label > *{
+    margin-left: 1rem;
+}
+.course-container >*{
+    display: flex;
+    align-items: center;
+}
+.course-item{
+    border-radius: 50%;
+    margin-left:0.5rem;
+}
+
+
+.header div:last-child{
+    padding: 1rem;
+    align-self: center;
+    width: 50%;
+    text-align: right;
+}
+
+.header div:first-child h2, h1{
+    color: #FF8C00;
+    font-weight: bolder;
+    font-size: small;    
+    padding-bottom: 10px;
+}
+.middle-separator{
+    position: absolute;
+    content: " ";
+    width: 2px;
+    height: 80%;
+    border: 2px dotted orange;
+    left: 50%;
+}
+
+hr{
+    margin: 0;
+    border-color: #FF8C00; 
+    border-width: 1px;
+}
+
+.tabs{
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap:0.5rem;
+    margin-bottom: 1rem;
+
+}
+
+.tab{
+    font-weight: 750;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    flex: 1;
+    background-color: #FEF3EA;
+    min-height: 2rem;
+    padding: 0.5rem;
+}
+
+.tab:first-child{
+    color: white;
+    background-color: #F57F26;
+}
+
+
+lightning-layout{
+    text-align: left;
+}
+.custom-box label{
+    color: black;
+    font-weight: 700;
+}
+.error-message{
+    color: red;
+}
+.input-container input{
+    padding: 5px;
+    border: 1px solid black;
+    width: 100%;
+    min-height: 2rem;
+    font-size: 0.9rem;
+    font-weight: 800;
+}
+
+
+/* @media (max-width:900px){
+    .tab{
+        font-size: 0.55rem;
+        
+    }
+} */

@@ -1,0 +1,86 @@
+.THIS .heading {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.THIS .backColor{
+    background-color: #f57f26;
+    border:1px solid white;
+ }
+ .THIS .slds-input {
+    padding-top: 0;
+    padding-right: var(--slds-c-input-spacing-horizontal-end, var(--sds-c-input-spacing-horizontal-end, var(--lwc-spacingMedium,1rem)));
+    padding-bottom: 0;
+    padding-left: var(--slds-c-input-spacing-horizontal-start, var(--sds-c-input-spacing-horizontal-start, var(--lwc-spacingSmall,0.75rem)));
+    width: 100%;
+    min-height: calc(var(--lwc-heightInput,1.875rem) + (var(--lwc-borderWidthThin,1px) * 2));
+    line-height: var(--lwc-heightInput,1.875rem);
+    border: var(--lwc-borderWidthThin,1px) solid var(--slds-c-input-color-border, var(--sds-c-input-color-border, var(--slds-g-color-border-base-4, var(--lwc-colorBorderInput,rgba(5, 5, 5, 0.83)))));
+    border-radius: var(--slds-c-input-radius-border, var(--sds-c-input-radius-border, var(--lwc-borderRadiusMedium,0.25rem)));
+    /* background-color: var(--slds-c-input-color-background, var(--sds-c-input-color-background, var(--slds-g-color-neutral-base-100, var(--lwc-colorBackgroundInput,rgb(255, 255, 255))))); */
+    color: var(--slds-c-input-text-color, var(--sds-c-input-text-color));
+    box-shadow: var(--slds-c-input-shadow, var(--sds-c-input-shadow));
+    transition: border var(--lwc-durationQuickly,0.1s) linear,background-color var(--lwc-durationQuickly,0.1s) linear;
+    display: inline-block;
+    background-color: #fef1e8;
+}
+.THIS .slds-input_faux {
+    padding-top: 0;
+    padding-right: var(--slds-c-input-spacing-horizontal-end, var(--sds-c-input-spacing-horizontal-end, var(--lwc-spacingMedium,1rem)));
+    padding-bottom: 0;
+    padding-left: var(--slds-c-input-spacing-horizontal-start, var(--sds-c-input-spacing-horizontal-start, var(--lwc-spacingSmall,0.75rem)));
+    width: 100%;
+    min-height: calc(var(--lwc-heightInput,1.875rem) + (var(--lwc-borderWidthThin,1px) * 2));
+    line-height: var(--lwc-heightInput,1.875rem);
+    border: var(--lwc-borderWidthThin,1px) solid var(--slds-c-input-color-border, var(--sds-c-input-color-border, var(--slds-g-color-border-base-4, var(--lwc-colorBorderInput,rgba(5, 5, 5, 0.83)))));
+    border-radius: var(--slds-c-input-radius-border, var(--sds-c-input-radius-border, var(--lwc-borderRadiusMedium,0.25rem)));
+    /* background-color: var(--slds-c-input-color-background, var(--sds-c-input-color-background, var(--slds-g-color-neutral-base-100, var(--lwc-colorBackgroundInput,rgb(255, 255, 255))))); */
+    color: var(--slds-c-input-text-color, var(--sds-c-input-text-color));
+    box-shadow: var(--slds-c-input-shadow, var(--sds-c-input-shadow));
+    transition: border var(--lwc-durationQuickly,0.1s) linear,background-color var(--lwc-durationQuickly,0.1s) linear;
+    display: inline-flex;
+    flex: 1 1 auto;
+    text-align: left;
+    background-color: #fef1e8;
+}
+.THIS .slds-textarea {
+    -webkit-appearance: none;
+    min-height: var(--slds-c-textarea-sizing-min-height, var(--sds-c-textarea-sizing-min-height));
+    width: 100%;
+    padding-top: var(--slds-c-textarea-spacing-block-start, var(--sds-c-textarea-spacing-block-start, var(--lwc-spacingXSmall,0.5rem)));
+    padding-right: var(--slds-c-textarea-spacing-inline-end, var(--sds-c-textarea-spacing-inline-end, var(--lwc-spacingSmall,0.75rem)));
+    padding-bottom: var(--slds-c-textarea-spacing-block-end, var(--sds-c-textarea-spacing-block-end, var(--lwc-spacingXSmall,0.5rem)));
+    padding-left: var(--slds-c-textarea-spacing-inline-start, var(--sds-c-textarea-spacing-inline-start, var(--lwc-spacingSmall,0.75rem)));
+    background-color: var(--slds-c-textarea-color-background, var(--sds-c-textarea-color-background, var(--slds-g-color-neutral-base-100, var(--lwc-colorBackgroundInput,rgb(255, 255, 255)))));
+    color: var(--slds-c-textarea-text-color, var(--sds-c-textarea-text-color));
+    border: var(--lwc-borderWidthThin,1px) solid var(--slds-c-textarea-color-border, var(--sds-c-textarea-color-border, var(--slds-g-color-border-base-4, var(--lwc-colorBorderInput,rgba(5, 5, 5, 0.83)))));
+    border-radius: var(--slds-c-textarea-radius-border, var(--sds-c-textarea-radius-border, var(--lwc-borderRadiusMedium,0.25rem)));
+    box-shadow: var(--slds-c-textarea-shadow, var(--sds-c-textarea-shadow));
+    resize: vertical;
+    transition: border var(--lwc-durationQuickly,0.1s) linear,background-color var(--lwc-durationQuickly,0.1s) linear;
+    background-color: #fef1e8;
+}
+.THIS .slds-dropdown {
+    position: absolute;
+    z-index: var(--lwc-zIndexDropdown,7000);
+    left: 50%;
+    float: left;
+    min-width: var(--lwc-sizeXxSmall,6rem);
+    max-width: var(--lwc-sizeMedium,20rem);
+    margin-top: var(--lwc-spacingXxxSmall,0.125rem);
+    margin-bottom: var(--lwc-spacingXxxSmall,0.125rem);
+    border: var(--lwc-borderWidthThin,1px) solid var(--slds-g-color-border-base-4, var(--lwc-colorBorder,rgba(5, 5, 5, 0.83)));
+    border-radius: var(--lwc-borderRadiusMedium,0.25rem);
+    padding: var(--lwc-spacingXxSmall,0.25rem) 0;
+    font-size: var(--lwc-fontSize2,0.75rem);
+    /* background: var(--slds-g-color-neutral-base-100, var(--lwc-colorBackgroundAlt,rgb(255, 255, 255))); */
+    box-shadow: var(--lwc-shadowDropDown,0 2px 3px 0 rgba(0, 0, 0, 0.16));
+    transform: translateX(-50%);
+    color: var(--slds-g-color-neutral-base-10, var(--lwc-colorTextDefault,rgb(13, 12, 12)));
+    background-color: #fef1e8 !important;
+}
+.THIS .slds-tabs_scoped__content {
+    border: 0px solid white !important;
+    padding-top:5px !important;     
+    padding: 7px 1px 5px 0px!important;                                                              
+}

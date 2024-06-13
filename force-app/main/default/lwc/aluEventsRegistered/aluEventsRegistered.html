@@ -1,0 +1,51 @@
+<template>
+    <div class="container">
+            <template lwc:if={eventsRegistered}> 
+                <section>
+                    <div class="slds-scrollable_y" style="height:23rem;width:100%;" tabindex="0">
+                    <table class="slds-text-heading_small">
+                        <thead style="position: sticky; top: 0; background-color: white; z-index: 1;">
+                            <tr>
+                                <th> Event Registration Number </th>
+                                <th> Event </th>
+                                <th> Registration Date/Time </th>
+                                <th> Alumni Attended? </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                             <template if:true={eventRegistrationsList}>
+                            <template for:each={eventRegistrationsList} for:item="evtreg">
+                                <tr key={evtreg.Id}>
+
+                                    <td data-cell="Event Registration Number">
+                                        <a class="slds-text-link pointer-hover" data-id={evtreg.Id}
+                                            onclick={navigateToRecord}>
+                                            <strong data-id={evtreg.Id}>{evtreg.Name}</strong>
+                                    </a>
+                                    </td>
+                                    <td data-cell="Event">
+                                        <strong>{evtreg.Event}</strong>
+                                    </td>
+                                    <td data-cell="Registration Date Time">
+                                        <strong>{evtreg.RegistrationDateTime}</strong>
+                                       
+                                    </td>
+                                    <td data-cell="Event Attended?">
+                                        <strong>{evtreg.EventAttended}</strong>
+                                    </td>
+                                </tr>
+                            </template>
+                        </template>
+                        
+                        <template if:true={noRecordsData}>
+                            <div style="text-align:center;color:red;" class="slds-p-top_large">
+                                No Records to Display
+                            </div>
+                          </template>
+                        </tbody>
+                    </table>
+                </div>
+                </section>
+            </template>  
+    </div>
+</template>

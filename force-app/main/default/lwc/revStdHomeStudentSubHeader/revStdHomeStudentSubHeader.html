@@ -1,0 +1,71 @@
+<template>
+    <div class="sub-header-wrapper">
+        <div class=" sub-header search-container">
+            <div><input type="text" class="slds-input search-input" placeholder="Search..." oninput={searchDataHandler}
+                    onfocus={searchFocusHandler} onblur={searchBlurHandler} onkeyup={handleSearchKeyUp} />
+                <div class="search-icon"></div>
+            </div>
+            <template lwc:if={showSearch}>
+                <div class="flyout">
+                    <ul>
+                        <li><a onclick={navigateToSearchPage}>{inputValue}</a></li>
+                    </ul>
+                </div>
+            </template>
+        </div>
+        <div class="sub-header E-Library" title="E-Library">
+            <a href='https://library.reva.edu.in/opac/' target='_blank'>E-Library</a>
+
+        </div>
+        <div class="sub-header My-360">
+            <div class="img-container-my-360">
+                <a href={my360PageUrl}><img src={my360ImageUrl} alt="MY 360" title="My 360"></a>
+            </div>
+        </div>
+        <div class="sub-header Notification">
+            <div class="img-container">
+                <a aria-haspopup="true" aria-expanded={showNotifications} onclick={toggleNotificationHandler}><img
+                        src={notificationImageUrl} alt="Notifications" title="Notifications"></a>
+                <template lwc:if={showNotifications}>
+                    <div role="menu" class="menu">
+                        <ul role="presentation">
+                            <template lwc:if={tasks} for:each={tasks} for:item="task" for:index="index">
+                                <li role="presentation" key={task.Id}><a data-id={task.Id}
+                                        onclick={navigateToNotificationDetailHandler} role="menuitem"
+                                        aria-disabled="false" tabindex="0" title={task.Subject}>{task.Subject}</a></li>
+                            </template>
+                            <template lwc:else>
+
+                                <li class="slds-m-around_medium" role="presentation"> No New Notifications !</li>
+
+                            </template>
+                        </ul>
+                    </div>
+                </template>
+            </div>
+        </div>
+        <div class="sub-header settings">
+            <div class="img-container">
+                <a href="javascript:void(0)" aria-haspopup="true" aria-expanded={showSettings}
+                    onclick={toggleSettingsHandler}><img src={settingsImageUrl} alt="Settings" title="Settings"></a>
+                <template lwc:if={showSettings}>
+                    <div role="menu" class="menu">
+                        <ul role="presentation">
+                            <template if:true={settingsMenuItems} for:each={settingsMenuItems} for:item="item"
+                                for:index="index">
+                                <li role="presentation" key={item.id}><a href={item.url} target={item.target}
+                                        role="menuitem" aria-disabled="false" tabindex="0"
+                                        title={item.name}>{item.name}</a></li>
+                            </template>
+                        </ul>
+                    </div>
+                </template>
+            </div>
+        </div>
+        <div class="sub-header Logout">
+            <div class="img-container">
+                <a href={logOutPageUrl}><img src={logOutImageUrl} alt="Log Out" title="Log out"></a>
+            </div>
+        </div>
+    </div>
+</template>

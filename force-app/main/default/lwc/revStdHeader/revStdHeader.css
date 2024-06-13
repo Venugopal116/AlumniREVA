@@ -1,0 +1,38 @@
+.header-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 12px 24px 5px 24px;
+    background-color: var(--reva-background-page-color);
+}
+
+
+.reva-university img {
+    height: 60px;
+    width: 180px;
+    object-fit: contain;
+}
+
+.reva-eleven-years img {
+    height: 60px;
+    width: 145px;
+    object-fit: contain;
+}
+
+@media only screen and (max-width: 47.9375rem) {
+    .header-wrapper {
+        padding-bottom: 0.3125rem;
+    }
+
+    .reva-university img {
+        height: 50px;
+        width: 100px;
+        object-fit: contain;
+    }
+
+    .reva-eleven-years img {
+        height: 50px;
+        width: 100px;
+        object-fit: contain;
+    }
+}

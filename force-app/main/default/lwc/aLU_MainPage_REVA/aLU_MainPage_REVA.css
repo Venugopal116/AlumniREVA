@@ -1,0 +1,524 @@
+/* Banners */
+.topBannerBg {
+    width: 100%;
+    height: 60vh;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    object-fit: contain;
+    background-color: #d8c5b4;
+}
+
+.connectWithAlumiBg {
+    background-color: #c21697;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.secondRowTileBg {
+    background-color: #c21697;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 497px;
+}
+
+
+/* tile rows */
+.row1_Tiles {
+    height: 320px;
+}
+
+.row2_Tiles {
+    height: 500px;
+}
+
+.row3_Tiles {
+    height: 500px;
+}
+
+.row1_JoinButtonCss {
+    width: 122px;
+    margin-top: 27px;
+}
+
+.tiles_Button {
+    width: 160px;
+    float: left;
+    margin-top: 108px;
+}
+
+
+/* Icons */
+.handSakeIcon {
+    width: 65%;
+    height: auto;
+}
+
+.allHandsJoinIcon {
+    width: 48%;
+    height: auto;
+}
+
+.givingHandsIcon {
+    width: 46%;
+    height: auto;
+}
+
+.contactBookIcon {
+    /* width: 10%;
+    height: auto;
+    float:right; */
+
+    margin-top: 33%;
+    width: 33%;
+    height: auto;
+    float: right;
+}
+
+.folderIcon {
+    width: 19%;
+    padding-top: 13px;
+    /* margin-top: 62px; */
+    height: auto;
+    float: right;
+}
+
+
+/* tile headinngs body content */
+
+.tileCss {
+    height: 282px;
+    display: flex;
+    flex-direction: column;
+}
+
+.tileHeading {
+    font-weight: inherit;
+    font-size: 2em;
+    color: white;
+    text-align: right;
+}
+
+.tileHeading2 {
+    font-weight: inherit;
+    font-size: 2em;
+    color: white;
+
+}
+
+.tileTextBodyContent {
+    color: white;
+    font-size: large;
+}
+
+/* resources card footer */
+
+.myResourcesCardTitles {
+
+    font-size: 25px;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-weight: 300;
+
+}
+
+.myResourcesCardContent {
+    font-size: 15px;
+    line-height: 233%;
+    color: white;
+
+    font-family: Arial, sans-serif;
+    font-weight: 300;
+}
+
+.resourceCardEventContent {
+    font-size: 15px;
+
+    color: white;
+
+    font-family: Arial, sans-serif;
+    font-weight: 300;
+}
+
+.ResourcesCard_knowMoreButton {
+
+    width: 9%;
+    background: transparent;
+    color: white;
+    float: right;
+}
+
+.iconLayoutItem {
+    position: relative;
+}
+
+.happeningsIcon {
+    position: absolute;
+    width: 14%;
+    bottom: 10%;
+    right: 5%;
+
+}
+
+.stayConnectedIcon {
+    position: absolute;
+    bottom: 8%;
+    right: 5%;
+}
+
+.accomplishmentsIcon {
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+    width: 12.5%;
+}
+
+.seekEmploymentIcon {
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+    width: 14.5%;
+}
+
+.jobAdsIcon {
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+    width: 14.5%;
+}
+
+.digitalCardsIcon {
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+    width: 13.5%;
+}
+
+.eventRegistrationIcon {
+    position: absolute;
+    bottom: 9%;
+    right: 5%;
+    width: 15.5%;
+}
+
+.alumniBlogsIcon {
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+    width: 12.7%;
+}
+
+.alumniVolunteerIcon {
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+    width: 13%;
+}
+
+.alumniAssistIcon {
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+    width: 13.5%;
+}
+
+.alumniFeedBackIcon {
+    position: absolute;
+    bottom: 10%;
+    right: 4%;
+    width: 14.5%;
+}
+
+.contributionsIcon {
+    position: absolute;
+    bottom: 11%;
+    right: 5%;
+    width: 13.5%;
+}
+
+
+
+@media only screen and (min-width: 321px) and (max-width: 767px) {
+
+    .iconLayoutItem {
+        position: relative;
+    }
+
+    .happeningsIcon {
+        position: absolute;
+        width: 20%;
+        bottom: 25%;
+        right: 5%;
+
+    }
+
+    .stayConnectedIcon {
+        position: absolute;
+        width: 20%;
+        bottom: 25%;
+        right: 5%;
+    }
+
+    .accomplishmentsIcon {
+        position: absolute;
+        bottom: 28%;
+        right: 5%;
+        width: 18%;
+    }
+
+    .seekEmploymentIcon {
+        position: absolute;
+        bottom: 29%;
+        right: 5%;
+        width: 18.5%;
+    }
+
+    .jobAdsIcon {
+        position: absolute;
+        bottom: 27%;
+        right: 5%;
+        width: 18.5%;
+    }
+
+    .digitalCardsIcon {
+        position: absolute;
+        bottom: 27%;
+        right: 5%;
+        width: 16.5%;
+    }
+
+    .eventRegistrationIcon {
+        position: absolute;
+        bottom: 25%;
+        right: 5%;
+        width: 20.5%;
+    }
+
+    .alumniBlogsIcon {
+        position: absolute;
+        bottom: 26%;
+        right: 7%;
+        width: 16.5%;
+    }
+
+    .alumniVolunteerIcon {
+        position: absolute;
+        bottom: 26%;
+        right: 5%;
+        width: 16.5%;
+    }
+
+    .alumniAssistIcon {
+        position: absolute;
+        bottom: 27%;
+        right: 5%;
+        width: 15.5%;
+    }
+
+    .alumniFeedBackIcon {
+        position: absolute;
+        bottom: 26%;
+        right: 5%;
+        width: 16.5%;
+    }
+
+    .contributionsIcon {
+        position: absolute;
+        bottom: 26%;
+        right: 5%;
+        width: 16.5%;
+    }
+
+
+
+    .row1_JoinButtonCss {
+        width: 122px;
+        margin-top: 27px;
+    }
+
+    .contactBookIcon {
+        margin-top: 0px;
+        width: 42%;
+        height: auto;
+        float: right;
+    }
+
+    .tileCss {
+        height: 130px;
+    }
+
+
+
+    .headingContainer {
+        height: 108px;
+    }
+
+    .tileHeading2 {
+        height: 3em !important;
+        font-weight: inherit;
+        font-size: 1em;
+        color: white;
+
+    }
+
+    .buttonAlign {
+        margin-top: 50%;
+    }
+
+    .tiles_Button {
+
+        height: 3em;
+        width: 100%;
+        font-size: 0.4em;
+        float: left;
+        margin-top: 20%;
+        padding-left: 0px;
+        padding-right: 0px;
+
+    }
+
+}
+
+
+/* New Layout Styling */
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    gap: 10px;
+}
+
+.tile-heading {
+    flex-grow: 1;
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: white;
+}
+
+.tile-text {
+    font-size: 1rem;
+}
+
+.bottom-images {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0;
+}
+
+.tile {
+    padding: 0;
+    box-sizing: border-box;
+    color: #fff;
+}
+
+.button-class {
+    float: left;
+}
+
+.tile1 {
+    background-color: #00A19B;
+}
+
+.tile2 {
+    background-color: #1D6FB8;
+}
+
+.tile3 {
+    background-color: #2155A1;
+}
+
+.tile4 {
+    background-color: #656c7e;
+}
+
+.tile5 {
+    background-color: #b38578;
+}
+
+.tile6 {
+    background-color: #75ba7b;
+}
+
+.tile7 {
+
+    background-image: url('/sfsites/c/resource/ALU_HomePage_TileIconsZIP/ALU_HomePage_TileIconsZIP/tile-bg-2.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+}
+
+.tile8 {
+
+    background-image: url('/sfsites/c/resource/ALU_HomePage_TileIconsZIP/ALU_HomePage_TileIconsZIP/tile-bg-1.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+}
+
+.tile9 {
+    background-color: #b51f83;
+}
+
+.tile10 {
+    background-color: #64256c;
+
+}
+
+.tile11 {
+    background-color: #9f5959;
+
+}
+
+.tile12 {
+    background-color: #2e265f;
+}
+
+.icons {
+    min-width: 2.5rem;
+}
+
+.icons img {
+    height: 2.5rem;
+    width: 2.5rem;
+    object-fit: contain;
+}
+
+@media only screen and (max-width: 992px) {
+
+    /* Tablet and Mobile */
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .combined {
+        display: flex;
+    }
+
+    .combined .tile {
+        flex: 0 0 100%;
+        box-sizing: border-box;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+
+    /* Mobile */
+    .grid-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .combined {
+        flex-direction: column;
+    }
+
+    .combined .tile {
+        flex: 1 1 100%;
+
+    }
+
+}
